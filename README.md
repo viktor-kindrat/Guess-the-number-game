@@ -2,7 +2,7 @@
 
 ---
 
-### Progect-game on Jquery
+### Progect-game on JQuery
 
 ---
 

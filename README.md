@@ -1,8 +1,6 @@
 # Guess the number game
 
----
-
-### Progect-game on JQuery
+## Progect-game on JQuery
 
 ---
 
@@ -10,4 +8,11 @@
 
 ![Figma preview](https://fv20.failiem.lv/thumb_show.php?i=2fs8rxcwx&view "Figma preview")
 
+---
+
+###### Linked in: https://www.linkedin.com/in/viktor-kindrat/
+---
+###### Github: https://github.com/victor-kindrat
+---
+###### Instagram: https://instagram.com/victor_kindrat?utm_medium=copy_link
 ---

@@ -14,11 +14,75 @@
 <body>
     <main class="wrap">
         <div class="main-menu">
-            <section id="menu-content" class="menu-content"></section>
-            <section id="select-difficulty" class="select-difficulty"></section>
+            <section id="menu-content" class="menu-content">
+                <h1 class="menu-content__headline">Guess the number</h1>
+                <button class="menu-content__btn">Play</button>
+            </section>
+            <section id="select-difficulty" class="select-difficulty">
+                <div class="select-difficulty__row">
+                    <div id="difficulty-wrap_easy" class="difficulty__wrap">
+                        <div id="difficulty__easy" class="select-difficulty__card select-difficulty__card_green">
+                            <img src="./image/difficutly/easy.png" alt="easy" class="select-difficulty__img">
+                            <p class="select-difficulty__text">Easy</p>
+                        </div>
+                    </div>
+                    <div id="difficulty-wrap_normal" class="difficulty__wrap">
+                        <div id="difficulty__normal" class="select-difficulty__card select-difficulty__card_yellow">
+                            <img src="./image/difficutly/hard.png" alt="Normal class=" select-difficulty__img ">
+                            <p class="select-difficulty__text ">Normal</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="select-difficulty__row " class="difficulty__wrap ">
+                    <div id="difficulty-wrap_hard ">
+                        <div id="difficulty__hard " class="select-difficulty__card select-difficulty__card_purple ">
+                            <img src="./image/difficutly/normal.png " alt="hard " class="select-difficulty__img ">
+                            <p class="select-difficulty__text ">Hard</p>
+                        </div>
+                    </div>
+                    <div id="difficulty-wrap_ultrahard " class="difficulty__wrap ">
+                        <div id="difficulty__ultrahard " class="select-difficulty__card select-difficulty__card_red ">
+                            <img src="./image/difficutly/ultraHard.png " alt="ultraHard " class=" select-difficulty__img ">
+                            <p class="select-difficulty__text ">Ultra <br> hard</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
-        <div class="playground">
-
+        <div class="playground ">
+            <span id="playground__timer " class="playground__timer ">00:00</span>
+            <section class="playground__inner ">
+                <h2 class="playground__headline ">Guess the number</h2>
+                <div class="playgroun__row ">
+                    <aside class="card card_yellow ">
+                        <h3 class="card__headline ">Hints:</h3>
+                        <ul class="card__hints ">
+                            <li class="card__hints-item card__text ">The number entered is more than entered</li>
+                            <li class="card__hints-item card__text ">The number entered is more than entered</li>
+                            <li class="card__hints-item card__text ">The number entered is more than entered</li>
+                            <li class="card__hints-item card__text ">The number entered is more than entered</li>
+                            <li class="card__hints-item card__text card__hints-item_actualy ">The number entered is more than entered</li>
+                        </ul>
+                    </aside>
+                    <div class="card card_gray ">
+                        <img src="./image/question.svg " alt="? " class="card__question-img ">
+                    </div>
+                    <aside class="card card_red ">
+                        <div class="card__adaptive-row ">
+                            <h3 class="card__headline ">Score:</h3>
+                            <p class="card__text ">654 points</p>
+                        </div>
+                        <div class="card__adaptive-row ">
+                            <h3 class="card__text ">Record:</h3>
+                            <p class="card__text ">989 points</p>
+                        </div>
+                        <div class="card__btn-group ">
+                            <button class="card__btn "><img src="./image/buttons/pause.svg " alt="|| "></button>
+                            <button class="card__btn "><img src="./image/buttons/home.svg " alt="home "></button>
+                        </div>
+                    </aside>
+                </div>
+            </section>
         </div>
     </main>
 </body>

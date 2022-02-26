@@ -12,7 +12,6 @@
         -moz-transform: scaleY(0) scaleX(0);
         -ms-transform: scaleY(0) scaleX(0);
         -o-transform: scaleY(0) scaleX(0);
-        box-shadow: 10px 0 10px #00000021;
     }
     25% {
         transform: scaleY(0) scaleX(0.2);
@@ -47,7 +46,6 @@
         -moz-transform: scaleY(1) scaleX(1);
         -ms-transform: scaleY(1) scaleX(1);
         -o-transform: scaleY(1) scaleX(1);
-        box-shadow: 20px 0 20px #00000073;
     }
     50% {
         transform: scaleY(1) scaleX(0.5);
@@ -280,7 +278,204 @@
 }
 
 .playground {
+    width: 100%;
+    height: 100%;
     display: none;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.playground__inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 80px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.playground__row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.playground__headline {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #929D7B;
+}
+
+.card {
+    padding: 25px;
+    min-height: 450px;
+    min-width: 400px;
+    width: min-content;
+    background: #929D7B;
+    box-shadow: 0px 32px 21px -21px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.card:first-child {
+    background: #FFFDDE;
+    border: 1px solid #cac8b0;
+}
+
+.card:nth-child(3) {
+    background: #FFCBCB;
+    border: 1px solid #c29999;
+}
+
+.card:nth-child(2) {
+    background: #C3C1D9;
+    border: 1px solid #9897aa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__headline {
+    width: 100%;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+.card__hints {
+    list-style-position: inside;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+
+.card__hints-item {
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.card__hints-item_actualy {
+    color: #000000;
+}
+
+.card_red {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    text-align: center;
+}
+
+.card__adaptive-row:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+.card__adaptive-row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__btn {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.card_red .card__text {
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    font-weight: 100;
+}
+
+.playground__timer {
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 50px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #F15C5C;
+}
+
+.playground__input-row {
+    height: 50px;
+    display: flex;
+    position: relative;
+    right: -25px;
+}
+
+.playground__guess-word {
+    height: 100%;
+    width: 200px;
+    border-radius: 5px;
+    padding: 10px 65px 10px 10px;
+    outline: none;
+    border: 1px solid #b98a8a;
+    background: #FFFFFF;
+    box-shadow: 0px 20px 22px -14px rgba(0, 0, 0, 0.25);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.playground__guess-btn {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: -50px;
+    background: #FFCBCB;
+    border-radius: 0;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid #b98a8a;
+    border-left: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@media screen and (max-height: 900px) {
+    .card {
+        min-height: 350px;
+        min-width: 300px;
+    }
 }
 
 @media screen and (max-width: 684px) {

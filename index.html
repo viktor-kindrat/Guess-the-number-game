@@ -56,7 +56,10 @@
         <div class=" playground ">
             <span id="playground__timer" class=" playground__timer ">00:00</span>
             <section class=" playground__inner ">
-                <h2 class=" playground__headline ">Guess the number</h2>
+                <div class="headline-row">
+
+                    <h2 class=" playground__headline ">Guess the number</h2>
+                </div>
                 <div class=" playground__row ">
                     <aside id="hints" class="card card_yellow">
                         <h3 class="card__headline">Hints:</h3>
@@ -74,12 +77,15 @@
 
                     <aside class=" card card_red ">
                         <div class=" card__adaptive-row ">
-                            <h3 class=" card__headline ">Score:</h3>
-                            <p id="scoreval" class=" card__text ">0 points</p>
+                            <h3 class=" card__headline ">Information pannel</h3>
                         </div>
                         <div class="card__adaptive-row">
                             <h3 class="card__text">Record:</h3>
                             <p class="card__text"> coming soon</p>
+                        </div>
+                        <div class="card__adaptive-row">
+                            <h3 class="card__text">Score:</h3>
+                            <p id="scoreval" class=" card__text ">0 points</p>
                         </div>
                         <div class=" card__btn-group ">
                             <button id="pause" class="card__btn card__btn_pause"><img class="pause-play__img" src="./image/buttons/pause.svg " alt=" || "></button>

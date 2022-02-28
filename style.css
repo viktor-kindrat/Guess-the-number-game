@@ -251,7 +251,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
+    z-index: 5;
     top: 20%;
     left: 10%;
     background: rgba(255, 203, 203, 0.4);
@@ -604,7 +605,8 @@
         max-height: 100%;
     }
     .menu-content__headline {
-        font-size: 100px;
+        
+        font-size: calc(50px + 5vw);
         line-height: 120px;
     }
     .menu-content__btn {
@@ -619,5 +621,207 @@
         height: 20px;
         top: 10px;
         right: 40px;
+    }
+
+    /* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #ffffff;
+    visibility: visible;
+    opacity: 1;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #ffffff;
+    visibility: visible;
+    opacity: 1;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: #ffffff;
+    visibility: visible;
+    opacity: 1;
+}
+
+    ::-webkit-scrollbar-button:horizontal:end:increment {
+        background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+        background-color: #ffffff;
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .playground {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .playground__inner {
+        justify-content: center;
+        align-items: center;
+        gap: 3vh;
+    }
+
+    .playground__guess-word {
+        width: 80%;
+    }
+
+    .playground__input-row {
+        order: -1;
+        height: 50px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+
+    .headline-row {
+        order: -1;
+    }
+
+    .playground__timer {
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        line-height: 30px;
+        position: absolute;
+    }
+
+    .playground__headline {
+        text-align: left;
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .playground__row {
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .card {
+        min-height: 120px;
+        height: 120px;
+        min-width: 90%;
+        padding: 5px 10px;
+    }
+
+    .card.card_red {
+        height: 120px;
+        order: -1;
+    }
+
+    .card.card_yellow {
+        height: 170px;
+    }
+
+
+    /* <aside class=" card card_red ">
+            <div class=" card__adaptive-row ">
+                <h3 class=" card__headline ">Score:</h3>
+                <p id="scoreval" class=" card__text ">0 points</p>
+            </div>
+            <div class="card__adaptive-row">
+                <h3 class="card__text">Record:</h3>
+                <p class="card__text"> coming soon</p>
+            </div>
+            <div class=" card__btn-group ">
+                <button id="pause" class="card__btn card__btn_pause"><img class="pause-play__img" src="./image/buttons/pause.svg " alt=" || "></button>
+                <button id="goHome" class="card__btn"><img src=" ./image/buttons/home.svg " alt=" home "></button>
+            </div>
+        </aside> */
+
+    .card__adaptive-row {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        text-align: left;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        gap: 5px;
+    }
+
+    .card__btn-group {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    .card__btn {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card__btn img {
+        height: 70%;
+    }
+
+    .card__btn img[src="./image/buttons/play.svg"] {
+        height: 55%;
+    }
+
+    .card.card_red {
+        min-height: 150px;
+        height: 150px;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .card.card_gray {
+        min-height: 70px;
+        height: 70px;
+    }
+
+    .card.card_red .card__text {
+        font-size: 14px;
+        line-height: 14px;
+    }
+    .card.card_red .card__headline {
+        font-size: 20px;
+        line-height: 20px;
+        padding: 0;
+    }
+
+    .card__hints {
+        max-height: 75%;
+    }
+
+    .card__headline {
+        font-size: 20px;
+        line-height: 20px;
+        width: auto;
+    }
+    
+    .card__question-img {
+        height: 100%;
+    }
+
+    .card_gray {
+        order: -1;
+    }
+
+    .playground__alerts {
+        position: fixed;
+        top: 30%;
+        font-size: 30px;
+        opacity: 0;
+        user-select: none;
     }
 }

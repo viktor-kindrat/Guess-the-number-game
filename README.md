@@ -6,7 +6,7 @@
 
 #### You can look figma design here: https://www.figma.com/file/A1htyWaIenXqxGojAxle79/guess-the-number?node-id=0%3A1
 
-![Figma preview](https://fv20.failiem.lv/thumb_show.php?i=2fs8rxcwx&view "Figma preview")
+![Figma preview](https://files.fm/thumb_show.php?i=vj92d2bqb "Figma preview")
 
 ---
 [Go game](https://victor-kindrat.github.io/Guess-the-number-game/)

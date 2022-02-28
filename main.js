@@ -74,7 +74,7 @@ let searchNeadedGM = (neededGM) => {
 let generateTheNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
-
+let y;
 let setTimer = (time) => {
     let min = 0;
     min = time
@@ -102,7 +102,6 @@ let setTimer = (time) => {
         }
     }, 1000);
     let clicks = 0;
-    let y;
     $('.card__btn_pause').click(function() {
         if (clicks === 0) {
             clicks = 1
@@ -299,7 +298,10 @@ $('#goHome').click(() => {
     generatedNum = 0;
     score = 0;
     tryCount = 0;
+    clearInterval(y);
+    $('.pause-play__img').attr('src', './image/buttons/pause.svg');
 
+    $('#scoreval').html('0 points')
     $('#hints').html('<h3 class="card__headline">Hints:</h3><ul class="card__hints"></ul>');
     $('#playground__timer').html('00:00');
 

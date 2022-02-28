@@ -375,12 +375,12 @@
 
     90% {
         opacity: 1;
-        margin-top: -400px;
+        margin-top: -50px;
     }
 
     100% {
         opacity: 0;
-        margin-top: -450px;
+        margin-top: -100px;
     }
 }
 
@@ -823,5 +823,16 @@
         font-size: 30px;
         opacity: 0;
         user-select: none;
+    }
+
+    .win-num {
+        opacity: 0.4;
+        font-size: 50px;
+        line-height: 50px;
+        user-select: none;
+    }
+
+    .playground__alert {
+        z-index: 20;
     }
 }

@@ -214,6 +214,16 @@ let getHints = (checkednum) => {
     }
 }
 
+function disableAnim(){
+    setTimeout(() => {
+        $('.playground__alerts').css({
+            animation: 'none',
+            display: 'none',
+            color: '#333333'
+        })
+    }, 1500);
+}
+
 $('.playground__guess-btn').click(function() {
     if (checkIfWin(generatedNum)) {
         score += 100 - tryCount * 2;
@@ -223,42 +233,48 @@ $('.playground__guess-btn').click(function() {
                 display: 'flex',
                 color: '#929D7B'
             })
-            $('.playground__alerts').html('Don`t use cheats)')
+            $('.playground__alerts').html('Don`t use cheats)');
+            disableAnim();
         } else if (tryCount >= 1 && tryCount <= 5) {
             $('.playground__alerts').css({
-                animation: 'up 1s 1 linear',
+                animation: 'up 1.1s 1 linear',
                 display: 'flex',
                 color: '#A4C958'
             })
-            $('.playground__alerts').html('Well done!')
+            $('.playground__alerts').html('Well done!');
+            disableAnim();
         } else if (tryCount >= 6 && tryCount <= 15) {
             $('.playground__alerts').css({
-                animation: 'up 1s 1 linear',
+                animation: 'up 1.2s 1 linear',
                 display: 'flex',
                 color: '#EBE368'
             })
-            $('.playground__alerts').html('Good!')
+            $('.playground__alerts').html('Good!');
+            disableAnim();
         } else if (tryCount >= 16 && tryCount <= 25) {
             $('.playground__alerts').css({
-                animation: 'up 1s 1 linear',
+                animation: 'up 0.9s 1 linear',
                 display: 'flex',
                 color: '#EBAF68'
             })
-            $('.playground__alerts').html('So... Not bad!')
+            $('.playground__alerts').html('So... Not bad!');
+            disableAnim();
         } else if (tryCount >= 26 && tryCount <= 50) {
             $('.playground__alerts').css({
-                animation: 'up 1s 1 linear',
+                animation: 'up 0.8s 1 linear',
                 display: 'flex',
                 color: '#EB6868'
             })
-            $('.playground__alerts').html('MhM&...')
+            $('.playground__alerts').html('MhM&...');
+            disableAnim();
         } else if (tryCount >= 51) {
             $('.playground__alerts').css({
-                animation: 'up 1s 1 linear',
+                animation: 'up 1.3s 1 linear',
                 display: 'flex',
                 color: '#F61E1E'
             })
-            $('.playground__alerts').html('You are in minus!')
+            $('.playground__alerts').html('You are in minus!');
+            disableAnim();
         }
         $('#scoreval').html(score + ' points');
         $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');

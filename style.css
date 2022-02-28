@@ -126,6 +126,67 @@
     }
 }
 
+::-webkit-scrollbar {
+    width: 15px; /* ширина для вертикального скролла */
+    height: 10px; /* высота для горизонтального скролла */
+    background-color: #00000017;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+    background-color: #F15C5C;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #bb4646;
+}
+
+/* Стрелки */
+
+::-webkit-scrollbar-button:vertical:start:decrement {
+    background: linear-gradient(120deg, transparent 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(240deg, transparent 40%, rgba(0, 0, 0, 0) 41%),
+    linear-gradient(0deg, transparent 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+}
+
+::-webkit-scrollbar-button:vertical:end:increment {
+    background:
+        linear-gradient(300deg, transparent 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(60deg, transparent 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+}
+
+::-webkit-scrollbar-button:horizontal:start:decrement {
+    background:
+        linear-gradient(30deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(150deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(270deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+}
+
+::-webkit-scrollbar-button:horizontal:end:increment {
+    background:
+        linear-gradient(210deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(330deg, #02141a 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(90deg, #02141a 30%, rgba(0, 0, 0, 0) 31%);
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+}
+
 .wrap {
     width: 100%;
     height: 100vh;
@@ -305,6 +366,30 @@
     gap: 30px;
 }
 
+@keyframes up {
+    0% {
+        opacity: 0;
+        margin-top: 0;
+    }
+
+    90% {
+        opacity: 1;
+        margin-top: -400px;
+    }
+
+    100% {
+        opacity: 0;
+        margin-top: -450px;
+    }
+}
+
+.playground__alerts {
+    position: fixed;
+    font-size: 50px;
+    opacity: 0;
+    user-select: none;
+}
+
 .playground__headline {
     font-style: normal;
     font-weight: normal;
@@ -313,7 +398,8 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #929D7B;
+    color: #2c2c2c73;
+    user-select: none;
 }
 
 .card {
@@ -329,9 +415,10 @@
 .card:first-child {
     background: #FFFDDE;
     border: 1px solid #cac8b0;
+    max-height: 450px;
 }
 
-.card:nth-child(3) {
+.card_red {
     background: #FFCBCB;
     border: 1px solid #c29999;
 }
@@ -357,10 +444,12 @@
 }
 
 .card__hints {
+    max-height: 200px;
     list-style-position: inside;
     display: flex;
     gap: 15px;
     flex-direction: column;
+    overflow-y: hidden;
 }
 
 .card__hints-item {
@@ -469,6 +558,21 @@
     outline: none;
     cursor: pointer;
     font-size: 18px;
+}
+
+.win-num {
+    opacity: 0.4;
+    font-size: 100px;
+    line-height: 100px;
+    user-select: none;
+}
+
+.card__headline-warning {
+    font-size: 36px;
+    opacity: 0.2;
+    display: flex;
+    text-align: center;
+    align-self: center;
 }
 
 @media screen and (max-height: 900px) {

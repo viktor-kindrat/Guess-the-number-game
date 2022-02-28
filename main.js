@@ -11,24 +11,28 @@ let gamemodes = [{
     min: 0,
     max: 100,
     hints: false,
-    time: 10
+    time: 8
 }, {
     name: 'hard',
     bgColor: '#C3C1D9',
     min: 0,
     max: 1000,
     hints: true,
-    time: 5
+    time: 6
 }, {
     name: 'insane',
     bgColor: '#FFCBCB',
     min: 0,
     max: 10000,
     hints: false,
-    time: 3
+    time: 4
 }, ]
 
+let x;
+
 let generatedNum = 0;
+let score = 0;
+let tryCount = 0;
 
 $("#menu__play-btn").click(() => {
     setTimeout(() => {
@@ -75,7 +79,7 @@ let setTimer = (time) => {
     let min = 0;
     min = time
     let sec = 0;
-    let x = setInterval(() => {
+    x = setInterval(() => {
         sec--;
         if (min === 0 && sec === 0) {
             alert("Time Over");
@@ -143,8 +147,9 @@ let stratGame = (bgColor, hints, time) => {
         backgroundSize: 'cover'
     })
     if (hints === false) {
-        $('#hints').css('filter', 'grayscale(0.5)')
-        $('#hints').html('h3 class="card__headline ">Hints in this mode are unavialable</h3>')
+        $('#hints').css('filter', 'grayscale(0.5)');
+        $('#hints').css('justifyContent', 'center');
+        $('#hints').html('<h3 class="card__headline-warning ">Hints in this mode are unavialable</h3>')
     }
     setTimer(time);
     $('.playground').css('display', 'flex');
@@ -152,18 +157,24 @@ let stratGame = (bgColor, hints, time) => {
 }
 
 let checkIfWin = (num) => {
-    if ($('.playground__guess-word').text() == num) {
+    console.log($('#guessedNum').val());
+    if ($('#guessedNum').val() == num) {
         return true
     } else {
         return false
     }
 }
 
+
+/* <li class="card__hints-item card__text ">The number entered is more than entered</li>
+<li class="card__hints-item card__text ">The number entered is more than entered</li>
+<li class="card__hints-item card__text card__hints-item_actualy ">The number entered is more than entered</li> */
+
+let gmodeindex;
 $('.select-difficulty__card').click(function() {
     console.log('done from any')
     let getId = $(this).attr('id');
     console.log(getId);
-    let gmodeindex;
     switch (getId) {
         case 'difficulty__easy':
             gmodeindex = searchNeadedGM('easy');
@@ -190,4 +201,104 @@ $('.select-difficulty__card').click(function() {
             console.log('done from btn')
             break;
     }
+})
+
+let getHints = (checkednum) => {
+    if (gmodeindex === 0 || gmodeindex === 2) {
+        if (checkednum > generatedNum) {
+            return 'The number I thought is smaller'
+        } else if (checkednum < generatedNum) {
+            return 'The number I thought is bigger'
+        }
+        console.log('it is done')
+    }
+}
+
+$('.playground__guess-btn').click(function() {
+    if (checkIfWin(generatedNum)) {
+        score += 100 - tryCount * 2;
+        if (tryCount === 0) {
+            $('.playground__alerts').css({
+                animation: 'up 1s 1 linear',
+                display: 'flex',
+                color: '#929D7B'
+            })
+            $('.playground__alerts').html('Don`t use cheats)')
+        } else if (tryCount >= 1 && tryCount <= 5) {
+            $('.playground__alerts').css({
+                animation: 'up 1s 1 linear',
+                display: 'flex',
+                color: '#A4C958'
+            })
+            $('.playground__alerts').html('Well done!')
+        } else if (tryCount >= 6 && tryCount <= 15) {
+            $('.playground__alerts').css({
+                animation: 'up 1s 1 linear',
+                display: 'flex',
+                color: '#EBE368'
+            })
+            $('.playground__alerts').html('Good!')
+        } else if (tryCount >= 16 && tryCount <= 25) {
+            $('.playground__alerts').css({
+                animation: 'up 1s 1 linear',
+                display: 'flex',
+                color: '#EBAF68'
+            })
+            $('.playground__alerts').html('So... Not bad!')
+        } else if (tryCount >= 26 && tryCount <= 50) {
+            $('.playground__alerts').css({
+                animation: 'up 1s 1 linear',
+                display: 'flex',
+                color: '#EB6868'
+            })
+            $('.playground__alerts').html('MhM&...')
+        } else if (tryCount >= 51) {
+            $('.playground__alerts').css({
+                animation: 'up 1s 1 linear',
+                display: 'flex',
+                color: '#F61E1E'
+            })
+            $('.playground__alerts').html('You are in minus!')
+        }
+        $('#scoreval').html(score + ' points');
+        $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');
+        tryCount = 0;
+        setTimeout(() => {
+            $('.card.card_gray').html('<img src=" ./image/question.svg " alt=" ? " class=" card__question-img ">');   
+            generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+        }, 2000);
+        $('#guessedNum').val('')
+    } else {
+        tryCount++;
+        if (tryCount > 3) {
+            $('.card__hints').css('overflowY', 'scroll');
+        }
+        $('.card__hints-item.card__text').attr('class', 'card__hints-item card__text');
+        $('.card__hints').append('<li class="card__hints-item card__text card__hints-item_actualy">' + getHints($('#guessedNum').val()) + '</li>');
+        $('#guessedNum').val('')
+    }
+})
+
+$('#goHome').click(() => {
+    generatedNum = 0;
+    score = 0;
+    tryCount = 0;
+
+    $('#hints').html('<h3 class="card__headline">Hints:</h3><ul class="card__hints"></ul>');
+    $('#playground__timer').html('00:00');
+
+    clearInterval(x);
+    $('#wrap').css({
+        background: 'url("./image/background.png") #E7FBBE center center',
+        backgroundSize: 'cover'
+    })
+    $('.playground').css('display', 'none');
+    $('.main-menu').css('display', 'flex');
+
+    $('#select-difficulty').css('animation', 'none')
+    $('#select-difficulty').css({
+        'transition': '0.3s',
+        'display': 'none'
+    })
+    $('.select-difficulty__close-btn').css('display', 'none');
 })

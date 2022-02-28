@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess the number</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="jquery.js"></script>
     <link rel="stylesheet" href="fonts.css">
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./image/favicon.ico" type="image/x-icon">
@@ -19,7 +20,8 @@
                 <h1 class="menu-content__headline">Guess the <br> number</h1>
                 <button id="menu__play-btn" class="menu-content__btn">Play</button>
             </section>
-            <button id="select-difficulty__close-btn" class="select-difficulty__close-btn"><img src="./image/close.svg" alt="x"></button>
+            <button id="select-difficulty__close-btn" class="select-difficulty__close-btn"><img src="./image/close.svg"
+                    alt="x"></button>
             <section id="select-difficulty" class="select-difficulty">
                 <div class="select-difficulty__row">
                     <div id="difficulty-wrap_easy " class="difficulty__wrap">
@@ -31,65 +33,68 @@
                     <div id="difficulty-wrap_normal " class="difficulty__wrap">
                         <div id="difficulty__normal" class="select-difficulty__card select-difficulty__card_yellow">
                             <img src="./image/difficutly/hard.png" alt="Normal class=" select-difficulty__img ">
-                            <p class="select-difficulty__text ">Normal</p>
+                            <p class=" select-difficulty__text ">Normal</p>
                         </div>
                     </div>
                 </div>
-                <div class="select-difficulty__row " class="difficulty__wrap ">
+                <div class="select-difficulty__row " class=difficulty__wrap ">
                     <div id="difficulty-wrap_hard " class="difficulty__wrap ">
                         <div id="difficulty__hard " class="select-difficulty__card select-difficulty__card_purple ">
-                            <img src="./image/difficutly/normal.png " alt="hard " class="select-difficulty__img ">
-                            <p class="select-difficulty__text ">Hard</p>
+                            <img src=" ./image/difficutly/normal.png " alt=" hard " class=" select-difficulty__img ">
+                            <p class=" select-difficulty__text ">Hard</p>
                         </div>
                     </div>
                     <div id="difficulty-wrap_ultrahard " class="difficulty__wrap ">
                         <div id="difficulty__ultrahard " class="select-difficulty__card select-difficulty__card_red ">
-                            <img src="./image/difficutly/ultraHard.png " alt="ultraHard " class=" select-difficulty__img ">
-                            <p class="select-difficulty__text ">Insane</p>
+                            <img src=" ./image/difficutly/ultraHard.png " alt=" ultraHard " class=" select-difficulty__img ">
+                            <p class=" select-difficulty__text ">Insane</p>
                         </div>
                     </div>
                 </div>
             </section>
         </div>
-        <div class="playground ">
-            <span id="playground__timer " class="playground__timer ">00:00</span>
-            <section class="playground__inner ">
-                <h2 class="playground__headline ">Guess the number</h2>
-                <div class="playground__row ">
-                    <aside id="hints " class="card card_yellow ">
-                        <h3 class="card__headline ">Hints:</h3>
-                        <ul class="card__hints ">
-                            <li class="card__hints-item card__text ">The number entered is more than entered</li>
-                            <li class="card__hints-item card__text ">The number entered is more than entered</li>
-                            <li class="card__hints-item card__text card__hints-item_actualy ">The number entered is more than entered</li>
+        <div class=" playground ">
+            <span id="playground__timer" class=" playground__timer ">00:00</span>
+            <section class=" playground__inner ">
+                <h2 class=" playground__headline ">Guess the number</h2>
+                <div class=" playground__row ">
+                    <aside id="hints" class="card card_yellow">
+                        <h3 class="card__headline">Hints:</h3>
+                        <ul class="card__hints">
                         </ul>
                     </aside>
-                    <div class="card card_gray ">
-                        <img src="./image/question.svg " alt="? " class="card__question-img ">
+
+                    <div class="card card_gray">
+                        <img src=" ./image/question.svg " alt=" ? " class=" card__question-img ">
                     </div>
-                    <aside class="card card_red ">
-                        <div class="card__adaptive-row ">
-                            <h3 class="card__headline ">Score:</h3>
-                            <p class="card__text ">654 points</p>
+                    <div class="playground__alerts">
+                        <span class="playground__alert">Hello world!</span>
+                    </div>
+
+
+                    <aside class=" card card_red ">
+                        <div class=" card__adaptive-row ">
+                            <h3 class=" card__headline ">Score:</h3>
+                            <p id="scoreval" class=" card__text ">0 points</p>
                         </div>
-                        <div class="card__adaptive-row ">
-                            <h3 class="card__text ">Record:</h3>
-                            <p class="card__text ">989 points</p>
+                        <div class="card__adaptive-row">
+                            <h3 class="card__text">Record:</h3>
+                            <p class="card__text"> coming soon</p>
                         </div>
-                        <div class="card__btn-group ">
-                            <button id="pause " class="card__btn card__btn_pause "><img class="pause-play__img " src="./image/buttons/pause.svg " alt="|| "></button>
-                            <button class="card__btn "><img src="./image/buttons/home.svg " alt="home "></button>
+                        <div class=" card__btn-group ">
+                            <button id="pause" class="card__btn card__btn_pause"><img class="pause-play__img" src="./image/buttons/pause.svg " alt=" || "></button>
+                            <button id="goHome" class="card__btn"><img src=" ./image/buttons/home.svg " alt=" home "></button>
                         </div>
                     </aside>
                 </div>
-                <div class="playground__input-row ">
-                    <input type="number " class="playground__guess-word ">
-                            <button class="playground__guess-btn "><img src="./image/buttons/guess.svg " alt="? "></button>
-                        </div>
+                <div class=" playground__input-row ">
+                    <input id="guessedNum" type="text" class="playground__guess-word">
+                    <button class="playground__guess-btn"><img src=" ./image/buttons/guess.svg " alt="?"></button>
+                </div>
             </section>
             </div>
     </main>
-    <script src="main.js "></script>
+    <script src=" main.js "></script>
 </body>
 
 </html>

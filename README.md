@@ -9,6 +9,10 @@
 ![Figma preview](https://fv20.failiem.lv/thumb_show.php?i=2fs8rxcwx&view "Figma preview")
 
 ---
+[Go game](https://victor-kindrat.github.io/Guess-the-number-game/)
+
+    
+---
 
 ###### Linked in: https://www.linkedin.com/in/viktor-kindrat/
 ---

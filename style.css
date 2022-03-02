@@ -1175,6 +1175,10 @@
     .playground__alert {
         z-index: 20;
     }
+
+    .select-difficulty__img {
+        width: 20%;
+    }
 }
 
 @media screen and (max-height: 503px) and (orientation: landscape) {
@@ -1292,6 +1296,10 @@
         height: 30px;
     }
 
+    .select-difficulty__img {
+        width: 30%;
+    }
+
     .playground {
         width: 100%;
         gap: 0;
@@ -1385,5 +1393,9 @@
         min-width: 0;
         height: 60vh;
         gap: 0;
+    }
+
+    .playground__alert {
+        font-size: 20px;
     }
 }

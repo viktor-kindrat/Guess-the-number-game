@@ -5,6 +5,28 @@
     font-family: Pixel;
 }
 
+@keyframes drag {
+    0% {
+        margin-left: 0;
+    }
+
+    25% {
+        margin-left: -10px;
+    }
+
+    50% {
+        margin-left: 0;
+    }
+
+    75% {
+        margin-left: 10px;
+    }
+
+    100% {
+        margin-left: 0;
+    }
+}
+
 @keyframes open {
     0% {
         transform: scaleY(0) scaleX(0);
@@ -630,13 +652,87 @@
 }
 
 @media screen and (max-width: 684px) {
+    @keyframes open {
+        0% {
+            transform: scaleY(0) scaleX(0);
+            -webkit-transform: scaleY(0) scaleX(0);
+            -moz-transform: scaleY(0) scaleX(0);
+            -ms-transform: scaleY(0) scaleX(0);
+            -o-transform: scaleY(0) scaleX(0);
+        }
+
+        25% {
+            transform: scaleY(0.2) scaleX(0.2);
+            -webkit-transform: scaleY(0.2) scaleX(0.2);
+            -moz-transform: scaleY(0.2) scaleX(0.2);
+            -ms-transform: scaleY(0.2) scaleX(0.2);
+            -o-transform: scaleY(0.2) scaleX(0.2);
+            box-shadow: 10px 0 10px #00000021;
+        }
+
+        50% {
+            transform: scaleY(00.5s) scaleX(0.5);
+            -webkit-transform: scaleY(00.5s) scaleX(0.5);
+            -moz-transform: scaleY(00.5s) scaleX(0.5);
+            -ms-transform: scaleY(0.5s) scaleX(0.5);
+            -o-transform: scaleY(00.5s) scaleX(0.5);
+            box-shadow: 15px 0 15px #0000003b;
+        }
+
+        100% {
+            transform: scaleY(1) scaleX(1);
+            -webkit-transform: scaleY(1) scaleX(1);
+            -moz-transform: scaleY(1) scaleX(1);
+            -ms-transform: scaleY(1) scaleX(1);
+            -o-transform: scaleY(1) scaleX(1);
+            box-shadow: 20px 0 20px #00000073;
+        }
+    }
+
+    @keyframes close {
+        0% {
+            transform: scaleY(1) scaleX(1);
+            -webkit-transform: scaleY(1) scaleX(1);
+            -moz-transform: scaleY(1) scaleX(1);
+            -ms-transform: scaleY(1) scaleX(1);
+            -o-transform: scaleY(1) scaleX(1);
+        }
+
+        50% {
+            transform: scaleY(0.5) scaleX(0.5);
+            -webkit-transform: scaleY(0.5) scaleX(0.5);
+            -moz-transform: scaleY(0.5) scaleX(0.5);
+            -ms-transform: scaleY(0.5) scaleX(0.5);
+            -o-transform: scaleY(0.5) scaleX(0.5);
+            box-shadow: 15px 0 15px #0000003b;
+        }
+
+        75% {
+            transform: scaleY(0.2) scaleX(0.2);
+            -webkit-transform: scaleY(0.2) scaleX(0.2);
+            -moz-transform: scaleY(0.2) scaleX(0.2);
+            -ms-transform: scaleY(0.2) scaleX(0.2);
+            -o-transform: scaleY(0.2) scaleX(0.2);
+            box-shadow: 10px 0 10px #00000021;
+        }
+
+        100% {
+            transform: scaleY(0) scaleX(0);
+            -webkit-transform: scaleY(0) scaleX(0);
+            -moz-transform: scaleY(0) scaleX(0);
+            -ms-transform: scaleY(0) scaleX(0);
+            -o-transform: scaleY(0) scaleX(0);
+            box-shadow: 10px 0 10px #00000021;
+        }
+    }
+
     .wrap {
         padding: 20px;
     }
 
     .select-difficulty {
         height: 90%;
-        top: 5%;
+        top: calc(5% + 20px);
     }
 
     .select-difficulty__row {
@@ -656,9 +752,8 @@
     }
 
     .menu-content__headline {
-
         font-size: calc(50px + 5vw);
-        line-height: 120px;
+        line-height: calc(70px + 5vw);
     }
 
     .menu-content__btn {
@@ -670,10 +765,15 @@
     }
 
     .select-difficulty__close-btn {
-        width: 20px;
-        height: 20px;
+        width: 30px;
+        height: 30px;
         top: 10px;
-        right: 40px;
+        right: 10px;
+    }
+
+    .select-difficulty__close-btn img {
+        width: 30px;
+        height: 30px;
     }
 
     ::-webkit-scrollbar-button:vertical:start:decrement {
@@ -765,6 +865,7 @@
         border: none;
         outline: none;
         cursor: pointer;
+        font-size: 20px;
     }
 
     .numbers:first-child {
@@ -918,5 +1019,181 @@
 
     .playground__alert {
         z-index: 20;
+    }
+}
+
+@media screen and (max-height: 684px) {
+    @keyframes open {
+        0% {
+            transform: scaleY(0) scaleX(0);
+            -webkit-transform: scaleY(0) scaleX(0);
+            -moz-transform: scaleY(0) scaleX(0);
+            -ms-transform: scaleY(0) scaleX(0);
+            -o-transform: scaleY(0) scaleX(0);
+        }
+
+        25% {
+            transform: scaleY(0.2) scaleX(0.2);
+            -webkit-transform: scaleY(0.2) scaleX(0.2);
+            -moz-transform: scaleY(0.2) scaleX(0.2);
+            -ms-transform: scaleY(0.2) scaleX(0.2);
+            -o-transform: scaleY(0.2) scaleX(0.2);
+            box-shadow: 10px 0 10px #00000021;
+        }
+
+        50% {
+            transform: scaleY(00.5s) scaleX(0.5);
+            -webkit-transform: scaleY(00.5s) scaleX(0.5);
+            -moz-transform: scaleY(00.5s) scaleX(0.5);
+            -ms-transform: scaleY(0.5s) scaleX(0.5);
+            -o-transform: scaleY(00.5s) scaleX(0.5);
+            box-shadow: 15px 0 15px #0000003b;
+        }
+
+        100% {
+            transform: scaleY(1) scaleX(1);
+            -webkit-transform: scaleY(1) scaleX(1);
+            -moz-transform: scaleY(1) scaleX(1);
+            -ms-transform: scaleY(1) scaleX(1);
+            -o-transform: scaleY(1) scaleX(1);
+            box-shadow: 20px 0 20px #00000073;
+        }
+    }
+
+    @keyframes close {
+        0% {
+            transform: scaleY(1) scaleX(1);
+            -webkit-transform: scaleY(1) scaleX(1);
+            -moz-transform: scaleY(1) scaleX(1);
+            -ms-transform: scaleY(1) scaleX(1);
+            -o-transform: scaleY(1) scaleX(1);
+        }
+
+        50% {
+            transform: scaleY(0.5) scaleX(0.5);
+            -webkit-transform: scaleY(0.5) scaleX(0.5);
+            -moz-transform: scaleY(0.5) scaleX(0.5);
+            -ms-transform: scaleY(0.5) scaleX(0.5);
+            -o-transform: scaleY(0.5) scaleX(0.5);
+            box-shadow: 15px 0 15px #0000003b;
+        }
+
+        75% {
+            transform: scaleY(0.2) scaleX(0.2);
+            -webkit-transform: scaleY(0.2) scaleX(0.2);
+            -moz-transform: scaleY(0.2) scaleX(0.2);
+            -ms-transform: scaleY(0.2) scaleX(0.2);
+            -o-transform: scaleY(0.2) scaleX(0.2);
+            box-shadow: 10px 0 10px #00000021;
+        }
+
+        100% {
+            transform: scaleY(0) scaleX(0);
+            -webkit-transform: scaleY(0) scaleX(0);
+            -moz-transform: scaleY(0) scaleX(0);
+            -ms-transform: scaleY(0) scaleX(0);
+            -o-transform: scaleY(0) scaleX(0);
+            box-shadow: 10px 0 10px #00000021;
+        }
+    }
+
+    .select-difficulty {
+        height: 100%;
+        top: 10%;
+    }
+
+    .select-difficulty__close-btn {
+        height: 30px;
+        width: 30px;
+        top: 10px;
+        right: 10px;
+    }
+
+    .select-difficulty__close-btn img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .playground {
+        width: 100%;
+        gap: 0;
+    }
+
+    .playground__inner {
+        gap: 10px;
+    }
+
+    .playground__row {
+        padding: 0;
+        margin: 0;
+    }
+
+    .playground__timer {
+        font-size: 25px;
+        line-height: 25px;
+        top: 15px;
+    }
+
+    .card__hints {
+        height: 80%;
+    }
+
+    .card.card_yellow .card__headline {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        height: 20%;
+    }
+
+    .card_yellow {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+
+    .card__adaptive-row .card__text {
+        font-size: 14px;
+        line-height: 15px;
+    }
+
+
+    .card.card_red {
+        display: flex;
+        gap: 5px;
+    }
+
+    .card__btn {
+        height: 40px;
+        width: 40px;
+    }
+
+    .card__btn img {
+        height: 80%;
+    }
+
+    .card__btn img[src="./image/buttons/play.svg"] {
+        height: 55%;
+    }
+
+    .card__hints-item.card__text {
+        font-size: 14px;
+        line-height: 15px;
+    }
+
+    .playground__headline {
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    .card__headline {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    .card {
+        min-height: 0;
+        min-width: 0;
+        height: 60vh;
+        gap: 0;
     }
 }

@@ -266,13 +266,17 @@ $('.playground__guess-btn').click(function () {
         $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');
         tryCount = 0;
         setTimeout(() => {
+            $('.card.card_gray').css('animation', 'drag 0.3s 3 linear');
             $('.card.card_gray').html('<img src=" ./image/question.svg " alt=" ? " class=" card__question-img ">');
             generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+            setTimeout(() => {
+                $('.card.card_gray').css('animation', 'none');
+            }, 1000);
         }, 2000);
         $('#guessedNum').val('')
     } else {
         tryCount++;
-        if (tryCount > 3) {
+        if (tryCount > 2) {
             $('.card__hints').css('overflowY', 'scroll');
         }
         $('.card__hints-item.card__text').attr('class', 'card__hints-item card__text');

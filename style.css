@@ -143,13 +143,10 @@
 
 ::-webkit-scrollbar {
     width: 15px;
-    /* ширина для вертикального скролла */
     height: 10px;
-    /* высота для горизонтального скролла */
     background-color: #00000017;
 }
 
-/* ползунок скроллбара */
 ::-webkit-scrollbar-thumb {
     background-color: #F15C5C;
     border-radius: 2px;
@@ -162,8 +159,6 @@
 ::-webkit-scrollbar-thumb:hover {
     background-color: #bb4646;
 }
-
-/* Стрелки */
 
 ::-webkit-scrollbar-button:vertical:start:decrement {
     background: linear-gradient(120deg, transparent 40%, rgba(0, 0, 0, 0) 41%),

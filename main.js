@@ -320,3 +320,11 @@ $('#goHome').click(() => {
     })
     $('.select-difficulty__close-btn').css('display', 'none');
 })
+
+$('.numbers').click(function() {
+    if ($(this).val() === '<'){
+        $('#guessedNum').val($('#guessedNum').val().slice(0, $('#guessedNum').val().length - 1))
+    } else {
+        $('#guessedNum').val($('#guessedNum').val() + $(this).val())
+    }
+})

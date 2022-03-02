@@ -13,6 +13,7 @@
         -ms-transform: scaleY(0) scaleX(0);
         -o-transform: scaleY(0) scaleX(0);
     }
+
     25% {
         transform: scaleY(0) scaleX(0.2);
         -webkit-transform: scaleY(0) scaleX(0.2);
@@ -21,6 +22,7 @@
         -o-transform: scaleY(0) scaleX(0.2);
         box-shadow: 10px 0 10px #00000021;
     }
+
     50% {
         transform: scaleY(1) scaleX(0.5);
         -webkit-transform: scaleY(1) scaleX(0.5);
@@ -29,6 +31,7 @@
         -o-transform: scaleY(1) scaleX(0.5);
         box-shadow: 15px 0 15px #0000003b;
     }
+
     100% {
         transform: scaleY(1) scaleX(1);
         -webkit-transform: scaleY(1) scaleX(1);
@@ -47,6 +50,7 @@
         -ms-transform: scaleY(1) scaleX(1);
         -o-transform: scaleY(1) scaleX(1);
     }
+
     50% {
         transform: scaleY(1) scaleX(0.5);
         -webkit-transform: scaleY(1) scaleX(0.5);
@@ -55,6 +59,7 @@
         -o-transform: scaleY(1) scaleX(0.5);
         box-shadow: 15px 0 15px #0000003b;
     }
+
     75% {
         transform: scaleY(0) scaleX(0.2);
         -webkit-transform: scaleY(0) scaleX(0.2);
@@ -63,6 +68,7 @@
         -o-transform: scaleY(0) scaleX(0.2);
         box-shadow: 10px 0 10px #00000021;
     }
+
     100% {
         transform: scaleY(0) scaleX(0);
         -webkit-transform: scaleY(0) scaleX(0);
@@ -77,17 +83,21 @@
     0% {
         transform: scaleY(1);
     }
+
     25% {
         transform: scaleY(0.5) skewY(30deg);
         box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.5), inset 0 0 5px#ffffff;
     }
+
     50% {
         transform: scaleY(0);
     }
+
     75% {
         transform: scaleY(0.5) skewY(-30deg);
         box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.5), inset 0 0 5px#ffffff;
     }
+
     100% {
         transform: scaleY(1);
         background-color: rgba(55, 168, 55, 0.541)ay;
@@ -99,17 +109,21 @@
         transform: scaleY(1);
         background-color: rgba(55, 168, 55, 0.541);
     }
+
     25% {
         transform: scaleY(0.5) skewY(-30deg);
         box-shadow: 0 20px 20px rgba(0, 0, 0, 0.5), inset 0 0 5px#ffffff;
     }
+
     50% {
         transform: scaleY(0);
     }
+
     75% {
         transform: scaleY(0.5) skewY(30deg);
         box-shadow: 0 -20px 20px rgba(0, 0, 0, 0.5), inset 0 0 5px#ffffff;
     }
+
     100% {
         transform: scaleY(1);
     }
@@ -120,6 +134,7 @@
         outline: 5px solid #929D7B;
         outline-offset: -5px;
     }
+
     100% {
         outline: 5px solid #929D7B;
         outline-offset: 5px;
@@ -127,8 +142,10 @@
 }
 
 ::-webkit-scrollbar {
-    width: 15px; /* ширина для вертикального скролла */
-    height: 10px; /* высота для горизонтального скролла */
+    width: 15px;
+    /* ширина для вертикального скролла */
+    height: 10px;
+    /* высота для горизонтального скролла */
     background-color: #00000017;
 }
 
@@ -150,8 +167,8 @@
 
 ::-webkit-scrollbar-button:vertical:start:decrement {
     background: linear-gradient(120deg, transparent 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(240deg, transparent 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(0deg, transparent 30%, rgba(0, 0, 0, 0) 31%);
+        linear-gradient(240deg, transparent 40%, rgba(0, 0, 0, 0) 41%),
+        linear-gradient(0deg, transparent 30%, rgba(0, 0, 0, 0) 31%);
     background-color: transparent;
     visibility: hidden;
     opacity: 0;
@@ -531,6 +548,10 @@
     right: -25px;
 }
 
+.playground__row-numbers {
+    display: none;
+}
+
 .playground__guess-word {
     height: 100%;
     width: 200px;
@@ -617,28 +638,34 @@
     .wrap {
         padding: 20px;
     }
+
     .select-difficulty {
         height: 90%;
         top: 5%;
     }
+
     .select-difficulty__row {
         flex-direction: column;
         height: 50%;
         column-gap: 0;
         row-gap: 10px;
     }
+
     .select-difficulty__card {
         height: 100%;
         width: 100%;
     }
+
     .select-difficulty__img {
         max-height: 100%;
     }
+
     .menu-content__headline {
-        
+
         font-size: calc(50px + 5vw);
         line-height: 120px;
     }
+
     .menu-content__btn {
         width: 60%;
         text-align: center;
@@ -646,6 +673,7 @@
         align-items: center;
         justify-content: center;
     }
+
     .select-difficulty__close-btn {
         width: 20px;
         height: 20px;
@@ -653,39 +681,37 @@
         right: 40px;
     }
 
-    /* Стрелки */
+    ::-webkit-scrollbar-button:vertical:start:decrement {
+        background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+        background-color: #ffffff;
+        visibility: visible;
+        opacity: 1;
+    }
 
-::-webkit-scrollbar-button:vertical:start:decrement {
-    background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #ffffff;
-    visibility: visible;
-    opacity: 1;
-}
+    ::-webkit-scrollbar-button:vertical:end:increment {
+        background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+        background-color: #ffffff;
+        visibility: visible;
+        opacity: 1;
+    }
 
-::-webkit-scrollbar-button:vertical:end:increment {
-    background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #ffffff;
-    visibility: visible;
-    opacity: 1;
-}
-
-::-webkit-scrollbar-button:horizontal:start:decrement {
-    background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-    linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
-    background-color: #ffffff;
-    visibility: visible;
-    opacity: 1;
-}
+    ::-webkit-scrollbar-button:horizontal:start:decrement {
+        background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+        background-color: #ffffff;
+        visibility: visible;
+        opacity: 1;
+    }
 
     ::-webkit-scrollbar-button:horizontal:end:increment {
         background: linear-gradient(120deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
-        linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
+            linear-gradient(240deg, #929D7B 40%, rgba(0, 0, 0, 0) 41%),
+            linear-gradient(0deg, #929D7B 30%, rgba(0, 0, 0, 0) 31%);
         background-color: #ffffff;
         visibility: visible;
         opacity: 1;
@@ -704,10 +730,57 @@
 
     .playground__guess-word {
         width: 80%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    .playground__input-column {
+        order: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .playground__row-numbers {
+        display: flex;
+        width: 80%;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        border: 1px solid #5c634d;
+        border-top: none;
+        border-bottom-left-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+
+    .playground__guess-btn {
+        border-bottom-right-radius: 0;
+
+    }
+
+    .numbers {
+        height: 35px;
+        width: 100%;
+        background: #929D7B;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        outline: none;
+        cursor: pointer;
+    }
+
+    .numbers:first-child {
+        border-bottom-left-radius: 5px;
+    }
+
+    .numbers:last-child {
+        border-bottom-right-radius: 5px;
     }
 
     .playground__input-row {
-        order: -1;
         height: 50px;
         width: 100%;
         display: flex;
@@ -756,22 +829,6 @@
     .card.card_yellow {
         height: 170px;
     }
-
-
-    /* <aside class=" card card_red ">
-            <div class=" card__adaptive-row ">
-                <h3 class=" card__headline ">Score:</h3>
-                <p id="scoreval" class=" card__text ">0 points</p>
-            </div>
-            <div class="card__adaptive-row">
-                <h3 class="card__text">Record:</h3>
-                <p class="card__text"> coming soon</p>
-            </div>
-            <div class=" card__btn-group ">
-                <button id="pause" class="card__btn card__btn_pause"><img class="pause-play__img" src="./image/buttons/pause.svg " alt=" || "></button>
-                <button id="goHome" class="card__btn"><img src=" ./image/buttons/home.svg " alt=" home "></button>
-            </div>
-        </aside> */
 
     .card__adaptive-row {
         width: 100%;
@@ -823,6 +880,7 @@
         font-size: 14px;
         line-height: 14px;
     }
+
     .card.card_red .card__headline {
         font-size: 20px;
         line-height: 20px;
@@ -838,7 +896,7 @@
         line-height: 20px;
         width: auto;
     }
-    
+
     .card__question-img {
         height: 100%;
     }
@@ -849,10 +907,11 @@
 
     .playground__alerts {
         position: fixed;
-        top: 30%;
+        top: 40%;
         font-size: 30px;
         opacity: 0;
         user-select: none;
+        z-index: 30;
     }
 
     .win-num {

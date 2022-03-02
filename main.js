@@ -102,7 +102,7 @@ let setTimer = (time) => {
         }
     }, 1000);
     let clicks = 0;
-    $('.card__btn_pause').click(function() {
+    $('.card__btn_pause').click(function () {
         if (clicks === 0) {
             clicks = 1
             clearInterval(x);
@@ -156,7 +156,6 @@ let stratGame = (bgColor, hints, time) => {
 }
 
 let checkIfWin = (num) => {
-    console.log($('#guessedNum').val());
     if ($('#guessedNum').val() == num) {
         return true
     } else {
@@ -164,40 +163,29 @@ let checkIfWin = (num) => {
     }
 }
 
-
-/* <li class="card__hints-item card__text ">The number entered is more than entered</li>
-<li class="card__hints-item card__text ">The number entered is more than entered</li>
-<li class="card__hints-item card__text card__hints-item_actualy ">The number entered is more than entered</li> */
-
 let gmodeindex;
-$('.select-difficulty__card').click(function() {
-    console.log('done from any')
+$('.select-difficulty__card').click(function () {
     let getId = $(this).attr('id');
-    console.log(getId);
     switch (getId) {
         case 'difficulty__easy':
             gmodeindex = searchNeadedGM('easy');
             generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
             stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            console.log('done from btn')
             break;
         case 'difficulty__normal':
             gmodeindex = searchNeadedGM('normal');
             generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
             stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            console.log('done from btn')
             break;
         case 'difficulty__hard ':
             gmodeindex = searchNeadedGM('hard');
             generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
             stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            console.log('done from btn')
             break;
         case 'difficulty__ultrahard ':
             gmodeindex = searchNeadedGM('insane');
             generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
             stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            console.log('done from btn')
             break;
     }
 })
@@ -209,11 +197,10 @@ let getHints = (checkednum) => {
         } else if (checkednum < generatedNum) {
             return 'The number I thought is bigger'
         }
-        console.log('it is done')
     }
 }
 
-function disableAnim(){
+function disableAnim() {
     setTimeout(() => {
         $('.playground__alerts').css({
             animation: 'none',
@@ -223,7 +210,7 @@ function disableAnim(){
     }, 1500);
 }
 
-$('.playground__guess-btn').click(function() {
+$('.playground__guess-btn').click(function () {
     if (checkIfWin(generatedNum)) {
         score += 100 - tryCount * 2;
         if (tryCount === 0) {
@@ -279,7 +266,7 @@ $('.playground__guess-btn').click(function() {
         $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');
         tryCount = 0;
         setTimeout(() => {
-            $('.card.card_gray').html('<img src=" ./image/question.svg " alt=" ? " class=" card__question-img ">');   
+            $('.card.card_gray').html('<img src=" ./image/question.svg " alt=" ? " class=" card__question-img ">');
             generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
         }, 2000);
         $('#guessedNum').val('')
@@ -321,8 +308,8 @@ $('#goHome').click(() => {
     $('.select-difficulty__close-btn').css('display', 'none');
 })
 
-$('.numbers').click(function() {
-    if ($(this).val() === '<'){
+$('.numbers').click(function () {
+    if ($(this).val() === '<') {
         $('#guessedNum').val($('#guessedNum').val().slice(0, $('#guessedNum').val().length - 1))
     } else {
         $('#guessedNum').val($('#guessedNum').val() + $(this).val())

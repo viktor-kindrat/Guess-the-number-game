@@ -221,6 +221,53 @@
     opacity: 0;
 }
 
+@keyframes bgMove {
+    0% {
+        background-size: 400%;
+        background-position: 0% 0%;
+    }
+
+    5% {
+        background-size: 410%;
+        background-position: 25% 25%;
+    }
+
+    25% {
+        background-size: 400%;
+        background-position: 50% 50%;
+    }
+
+    35% {
+        background-size: 410%;
+        background-position: 75% 75%;
+    }
+
+    50% {
+        background-size: 400%;
+        background-position: 100% 100%;
+    }
+
+    75% {
+        background-size: 410%;
+        background-position: 75% 75%;
+    }
+
+    85% {
+        background-size: 400%;
+        background-position: 50% 50%;
+    }
+
+    95% {
+        background-size: 410%;
+        background-position: 25% 25%;
+    }
+
+    100% {
+        background-size: 400%;
+        background-position: 0% 0%;
+    }
+}
+
 .wrap {
     width: 100%;
     height: 100vh;
@@ -230,8 +277,10 @@
     justify-content: center;
     flex-direction: column;
     padding: 30px;
-    background: url("./image/background.png") #E7FBBE center center;
+    background: url("./image/background.png") #E7FBBE 50% 50%;
     background-size: cover;
+    animation: bgMove infinite 120s;
+    -webkit-animation: bgMove infinite 120s;
 }
 
 .menu__switch-lang {
@@ -654,7 +703,8 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #F15C5C;
+    color: #fc7e7e;
+    text-shadow: 0 0 1px #bb4646;
 }
 
 .playground__input-row {
@@ -830,8 +880,10 @@
     }
 
     .select-difficulty {
+        width: calc(100% - 40px);
         height: 90%;
         top: calc(5% + 20px);
+        left: 20px;
     }
 
     .select-difficulty__row {
@@ -851,8 +903,8 @@
     }
 
     .menu-content__headline {
-        font-size: calc(50px + 5vw);
-        line-height: calc(70px + 5vw);
+        font-size: calc(30px + 5vw);
+        line-height: calc(60px + 5vw);
     }
 
     .menu-content__btn {
@@ -1121,7 +1173,7 @@
     }
 }
 
-@media screen and (max-height: 684px) and (orientation: landscape) {
+@media screen and (max-height: 503px) and (orientation: landscape) {
     @keyframes open {
         0% {
             transform: scaleY(0) scaleX(0);
@@ -1196,9 +1248,32 @@
         }
     }
 
+    .menu-content__headline {
+        font-size: 60px;
+        line-height: 60px;
+        margin-top: -60px;
+    }
+
+    .menu__switch-lang {
+        position: relative;
+        top: -70px;
+    }
+
+    .main-menu {
+        padding: 0;
+    }
+
+    .menu-content {
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        padding: 0;
+        margin: 0;
+    }
+
     .select-difficulty {
-        height: 100%;
-        top: 10%;
+        height: calc(100% - 40px);
+        top: calc(10% - 20px);
     }
 
     .select-difficulty__close-btn {
@@ -1235,6 +1310,15 @@
 
     .card__hints {
         height: 80%;
+    }
+
+    .card__headline-warning {
+        width: 100%;
+        font-size: calc(15px + 1vw);
+        line-height: calc(15px + 1vw);
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .card.card_yellow .card__headline {

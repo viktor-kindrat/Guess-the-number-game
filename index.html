@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ua">
 
 <head>
     <meta charset="UTF-8">
@@ -17,10 +17,19 @@
 <body>
     <main class="wrap" id="wrap">
         <div class="main-menu">
+            <!-- main page with play btn  -->
             <section id="menu-content" class="menu-content">
-                <h1 class="menu-content__headline">Guess the <br> number</h1>
-                <button id="menu__play-btn" class="menu-content__btn">Play</button>
+                <div class="menu__switch-lang">
+                    <div class="menu__switcher"></div>
+                    <div class="langs">
+                        <button class="menu__lang menu__lang_ua"></button>
+                        <button class="menu__lang menu__lang_en"></button>
+                    </div>
+                </div>
+                <h1 class="menu-content__headline">Відгадай <br> число</h1>
+                <button id="menu__play-btn" class="menu-content__btn">Грати</button>
             </section>
+            <!-- select difficulty  -->
             <button id="select-difficulty__close-btn" class="select-difficulty__close-btn"><img src="./image/close.svg"
                     alt="x"></button>
             <section id="select-difficulty" class="select-difficulty">
@@ -28,23 +37,23 @@
                     <div id="difficulty-wrap_easy" class="difficulty__wrap">
                         <div id="difficulty__easy" class="select-difficulty__card select-difficulty__card_green">
                             <img src="./image/difficutly/easy.png" alt="easy" class="select-difficulty__img">
-                            <p class="select-difficulty__text">Easy</p>
+                            <p class="select-difficulty__text" id="text_easy">Легко</p>
                         </div>
                     </div>
                     <div id="difficulty-wrap_normal " class="difficulty__wrap">
                         <div id="difficulty__normal" class="select-difficulty__card select-difficulty__card_yellow">
                             <img src="./image/difficutly/hard.png" alt="Normal class=" select-difficulty__img ">
-                            <p class=" select-difficulty__text ">Normal</p>
+                            <p class=" select-difficulty__text" id="text_normal">Номально</p>
                         </div>
                     </div>
                 </div>
-                <div class=" select-difficulty__row " class=difficulty__wrap ">
+                <div class=" select-difficulty__row " class="difficulty__wrap">
                             <div id="difficulty-wrap_hard " class="difficulty__wrap ">
                                 <div id="difficulty__hard "
                                     class="select-difficulty__card select-difficulty__card_purple ">
                                     <img src=" ./image/difficutly/normal.png " alt=" hard "
-                                        class=" select-difficulty__img ">
-                                    <p class=" select-difficulty__text ">Hard</p>
+                                        class="select-difficulty__img">
+                                    <p class="select-difficulty__text" id="text_hard">Складно</p>
                                 </div>
                             </div>
                             <div id="difficulty-wrap_ultrahard " class="difficulty__wrap ">
@@ -52,44 +61,46 @@
                                     class="select-difficulty__card select-difficulty__card_red ">
                                     <img src=" ./image/difficutly/ultraHard.png " alt=" ultraHard "
                                         class=" select-difficulty__img ">
-                                    <p class=" select-difficulty__text ">Insane</p>
+                                    <p class="select-difficulty__text" id="text_insane">Неможливо</p>
                                 </div>
                             </div>
                         </div>
             </section>
         </div>
+        <!-- playground  -->
         <div class=" playground ">
             <span id="playground__timer" class=" playground__timer ">00:00</span>
             <section class=" playground__inner ">
                 <div class="headline-row">
-                    <h2 class=" playground__headline ">Guess the number</h2>
+                    <h2 class="playground__headline">Відгадай число</h2>
                 </div>
                 <div class=" playground__row ">
+                    <!-- card  -->
                     <aside id="hints" class="card card_yellow">
-                        <h3 class="card__headline">Hints:</h3>
+                        <h3 class="card__headline" id="text_hints">Підказки</h3>
                         <ul class="card__hints">
                         </ul>
                     </aside>
-
+                    <!-- card  -->
                     <div class="card card_gray">
                         <img src=" ./image/question.svg " alt=" ? " class=" card__question-img ">
                     </div>
+                    <!-- alert hided  -->
                     <div class="playground__alerts">
                         <span class="playground__alert">Hello world!</span>
                     </div>
-
-
+                    <!-- card  -->
                     <aside class=" card card_red ">
                         <div class="card__adaptive-row">
-                            <h3 class=" card__headline ">Information pannel</h3>
+                            <h3 class="card__headline" id="info_text">Інформаційна <br> панель</h3>
                         </div>
                         <div class="card__adaptive-row">
-                            <h3 class="card__text">Record:</h3>
-                            <p class="card__text"> coming soon</p>
+                            <h3 class="card__text" id="text_record">Рекорд:</h3>
+                            <p class="card__text" id="text_soon"> згодом</p>
                         </div>
                         <div class="card__adaptive-row">
-                            <h3 class="card__text">Score:</h3>
-                            <p id="scoreval" class=" card__text ">0 points</p>
+                            <h3 class="card__text" id="text_statistic">Статистика:</h3>
+                            <p id="scoreval" class="card__text">0 балів</p>
                         </div>
                         <div class=" card__btn-group ">
                             <button id="pause" class="card__btn card__btn_pause"><img class="pause-play__img"
@@ -100,10 +111,12 @@
                     </aside>
                 </div>
                 <div class="playground__input-column">
+                    <!-- input and btn -->
                     <div class="playground__input-row">
                         <input id="guessedNum" type="text" class="playground__guess-word">
                         <button class="playground__guess-btn"><img src=" ./image/buttons/guess.svg " alt="?"></button>
                     </div>
+                    <!-- phone keyboard  -->
                     <div class="playground__row-numbers">
                         <input type="button" class="numbers" id="num1" value="1">
                         <input type="button" class="numbers" id="num2" value="2">

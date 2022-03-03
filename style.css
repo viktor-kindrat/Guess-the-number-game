@@ -1003,7 +1003,7 @@
     }
 
     .wrap {
-        padding: 20px;
+        padding: 0px;
     }
 
     .select-difficulty {
@@ -1306,6 +1306,35 @@
     .select-difficulty__img {
         width: 20%;
     }
+
+    .introduceing {
+        height: 95%;
+        width: 95%;
+    }
+
+    .description__item {
+        padding: 10px 10px 10px 60px;
+    }
+    
+    .description__item_min {
+        background: #C3C1D9 url('image/icons/min.svg') no-repeat 10px center;
+        background-size: 30px;
+    }
+    
+    .description__item_max {
+        background: #FFCBCB url('image/icons/max.svg') no-repeat 10px center;
+        background-size: 30px;
+    }
+    
+    .description__item_hints {
+        background: #929D7B url('image/icons/hints.svg') no-repeat 20px center;
+        background-size: 20px;
+    }
+    
+    .description__item_time {
+        background: #FFFDDE url('image/icons/time.svg') no-repeat 15px center;
+        background-size: 30px;
+    }
 }
 
 @media screen and (max-height: 503px) and (orientation: landscape) {
@@ -1524,5 +1553,29 @@
 
     .playground__alert {
         font-size: 20px;
+    }
+
+    .description__item {
+        padding: 10px 10px 10px 60px;
+    }
+    
+    .description__item_min {
+        background: #C3C1D9 url('image/icons/min.svg') no-repeat 10px center;
+        background-size: 20px;
+    }
+    
+    .description__item_max {
+        background: #FFCBCB url('image/icons/max.svg') no-repeat 10px center;
+        background-size: 21px;
+    }
+    
+    .description__item_hints {
+        background: #929D7B url('image/icons/hints.svg') no-repeat 15px center;
+        background-size: 10px;
+    }
+    
+    .description__item_time {
+        background: #FFFDDE url('image/icons/time.svg') no-repeat 10px center;
+        background-size: 20px;
     }
 }

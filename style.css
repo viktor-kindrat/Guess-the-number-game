@@ -5,6 +5,21 @@
     font-family: Pixel;
 }
 
+.preloader {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    background: #E7FBBE;
+    z-index: 30;
+}
+
+.preloader_inner {
+    width: 15%;
+}
+
 @keyframes drag {
     0% {
         margin-left: 0;

@@ -249,32 +249,32 @@ $('.select-difficulty__card').click(function () {
     }, 599);
 })
 
-$('#play').click(function(){
+$('#play').click(function () {
     $('.introduceing').css('animation', 'close 0.6s linear 1');
     setTimeout(() => {
         $('.introduceing').css('display', 'none');
         switch (getId) {
-                case 'difficulty__easy':
-                    gmodeindex = searchNeadedGM('easy');
-                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-                    break;
-                case 'difficulty__normal':
-                    gmodeindex = searchNeadedGM('normal');
-                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-                    break;
-                case 'difficulty__hard ':
-                    gmodeindex = searchNeadedGM('hard');
-                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-                    break;
-                case 'difficulty__ultrahard ':
-                    gmodeindex = searchNeadedGM('insane');
-                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-                    break;
-            }
+            case 'difficulty__easy':
+                gmodeindex = searchNeadedGM('easy');
+                generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                break;
+            case 'difficulty__normal':
+                gmodeindex = searchNeadedGM('normal');
+                generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                break;
+            case 'difficulty__hard ':
+                gmodeindex = searchNeadedGM('hard');
+                generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                break;
+            case 'difficulty__ultrahard ':
+                gmodeindex = searchNeadedGM('insane');
+                generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                break;
+        }
     }, 599);
 })
 

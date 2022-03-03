@@ -415,7 +415,7 @@ $('.playground__guess-btn').click(function () {
     }
 })
 
-$('#goHome').click(() => {
+$('.card__btn.card__btn_home').click(() => {
     generatedNum = 0;
     score = 0;
     tryCount = 0;

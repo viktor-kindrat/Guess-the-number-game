@@ -1240,6 +1240,7 @@
     .mobile {
         display: flex;
         position: fixed;
+        z-index: 35;
     }
 
     .mobile.card__btn-group {

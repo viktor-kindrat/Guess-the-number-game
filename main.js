@@ -149,7 +149,7 @@ let stratGame = (bgColor, hints, time) => {
     if (hints === false) {
         $('#hints').css('filter', 'grayscale(0.5)');
         $('#hints').css('justifyContent', 'center');
-        if (lang === 'ua'){
+        if (lang === 'ua') {
             $('#hints').html('<h3 class="card__headline-warning ">Недоступно</h3>')
         } else if (lang === 'en') {
             $('#hints').html('<h3 class="card__headline-warning ">Unavialable</h3>')
@@ -168,43 +168,126 @@ let checkIfWin = (num) => {
     }
 }
 
+let getId;
 let gmodeindex;
 $('.select-difficulty__card').click(function () {
-    let getId = $(this).attr('id');
-    switch (getId) {
-        case 'difficulty__easy':
-            gmodeindex = searchNeadedGM('easy');
-            generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-            stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            break;
-        case 'difficulty__normal':
-            gmodeindex = searchNeadedGM('normal');
-            generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-            stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            break;
-        case 'difficulty__hard ':
-            gmodeindex = searchNeadedGM('hard');
-            generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-            stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            break;
-        case 'difficulty__ultrahard ':
-            gmodeindex = searchNeadedGM('insane');
-            generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
-            stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
-            break;
-    }
+    getId = $(this).attr('id');
+    $('#select-difficulty__close-btn').css('display', 'none')
+    $('.select-difficulty').css('animation', 'close 0.6s linear 1');
+    setTimeout(() => {
+        $('.select-difficulty').css('display', 'none');
+        $('.introduceing').css({
+            'display': 'flex',
+            'animation': 'open 1s 1 linear'
+        })
+        switch (getId) {
+            case 'difficulty__easy':
+                $('.diff__name').css('color', gamemodes[0].bgColor);
+                if (lang === 'ua') {
+                    $('.diff__name').html('Легко');
+                    $('.description__item_min').html('Мінімальне значення: 1');
+                    $('.description__item_max').html('Максимальне значення: 100');
+                    $('.description__item_hints').html('Підказки: доступні');
+                    $('.description__item_time').html('Час: 10 хв');
+                } else if (lang === 'en') {
+                    $('.diff__name').html('Easy');
+                    $('.description__item_min').html('Minimum value: 1');
+                    $('.description__item_max').html('Maximum value: 100');
+                    $('.description__item_hints').html('Hints: avialable');
+                    $('.description__item_time').html('Time: 10 min');
+                }
+                break;
+            case 'difficulty__normal':
+                $('.diff__name').css('color', gamemodes[1].bgColor);
+                if (lang === 'ua') {
+                    $('.diff__name').html('Нормально');
+                    $('.description__item_min').html('Мінімальне значення: 1');
+                    $('.description__item_max').html('Максимальне значення: 100');
+                    $('.description__item_hints').html('Підказки: недоступні');
+                    $('.description__item_time').html('Час: 8 хв');
+                } else if (lang === 'en') {
+                    $('.diff__name').html('Normal');
+                    $('.description__item_min').html('Minimum value: 1');
+                    $('.description__item_max').html('Maximum value: 100');
+                    $('.description__item_hints').html('Hints: unavialable');
+                    $('.description__item_time').html('Time: 8 min');
+                }
+                break;
+            case 'difficulty__hard ':
+                $('.diff__name').css('color', gamemodes[2].bgColor);
+                if (lang === 'ua') {
+                    $('.diff__name').html('Складно');
+                    $('.description__item_min').html('Мінімальне значення: 1');
+                    $('.description__item_max').html('Максимальне значення: 1000');
+                    $('.description__item_hints').html('Підказки: доступні');
+                    $('.description__item_time').html('Час: 6 хв');
+                } else if (lang === 'en') {
+                    $('.diff__name').html('Hard');
+                    $('.description__item_min').html('Minimum value: 1');
+                    $('.description__item_max').html('Maximum value: 1000');
+                    $('.description__item_hints').html('Hints: avialable');
+                    $('.description__item_time').html('Time: 6 min');
+                }
+                break;
+            case 'difficulty__ultrahard ':
+                $('.diff__name').css('color', gamemodes[3].bgColor);
+                if (lang === 'ua') {
+                    $('.diff__name').html('Неможливо');
+                    $('.description__item_min').html('Мінімальне значення: 1');
+                    $('.description__item_max').html('Максимальне значення: 10000');
+                    $('.description__item_hints').html('Підказки: недоступні');
+                    $('.description__item_time').html('Час: 4 хв');
+                } else if (lang === 'en') {
+                    $('.diff__name').html('Insane');
+                    $('.description__item_min').html('Minimum value: 1');
+                    $('.description__item_max').html('Maximum value: 10000');
+                    $('.description__item_hints').html('Hints: unavialable');
+                    $('.description__item_time').html('Time: 4 min');
+                }
+                break;
+        }
+    }, 599);
+})
+
+$('#play').click(function(){
+    $('.introduceing').css('animation', 'close 0.6s linear 1');
+    setTimeout(() => {
+        $('.introduceing').css('display', 'none');
+        switch (getId) {
+                case 'difficulty__easy':
+                    gmodeindex = searchNeadedGM('easy');
+                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                    break;
+                case 'difficulty__normal':
+                    gmodeindex = searchNeadedGM('normal');
+                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                    break;
+                case 'difficulty__hard ':
+                    gmodeindex = searchNeadedGM('hard');
+                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                    break;
+                case 'difficulty__ultrahard ':
+                    gmodeindex = searchNeadedGM('insane');
+                    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+                    break;
+            }
+    }, 599);
 })
 
 let getHints = (checkednum) => {
     if (gmodeindex === 0 || gmodeindex === 2) {
         if (checkednum > generatedNum) {
-            if (lang === 'ua'){
+            if (lang === 'ua') {
                 return 'Число загадане мною менше'
             } else if (lang === 'en') {
                 return 'The number I thought is less than your'
             }
         } else if (checkednum < generatedNum) {
-            if (lang === 'ua'){
+            if (lang === 'ua') {
                 return 'Число загадане мною більше'
             } else if (lang === 'en') {
                 return 'The number I thought is more than your'
@@ -232,7 +315,7 @@ $('.playground__guess-btn').click(function () {
                 display: 'flex',
                 color: '#929D7B'
             })
-            if (lang === 'ua'){
+            if (lang === 'ua') {
                 $('.playground__alerts').html('Не використовуй чіти)');
             } else if (lang === 'en') {
                 $('.playground__alerts').html("Don't use cheats)");
@@ -244,7 +327,7 @@ $('.playground__guess-btn').click(function () {
                 display: 'flex',
                 color: '#A4C958'
             })
-            if (lang === 'ua'){
+            if (lang === 'ua') {
                 $('.playground__alerts').html('Чудово!');
             } else if (lang === 'en') {
                 $('.playground__alerts').html('Great!');
@@ -256,7 +339,7 @@ $('.playground__guess-btn').click(function () {
                 display: 'flex',
                 color: '#EBE368'
             });
-            if (lang === 'ua'){
+            if (lang === 'ua') {
                 $('.playground__alerts').html('Добре!');
             } else if (lang === 'en') {
                 $('.playground__alerts').html('Good!');
@@ -268,7 +351,7 @@ $('.playground__guess-btn').click(function () {
                 display: 'flex',
                 color: '#EBAF68'
             });
-            if (lang === 'ua'){
+            if (lang === 'ua') {
                 $('.playground__alerts').html('хм... Не погано!');
             } else if (lang === 'en') {
                 $('.playground__alerts').html('hmm... Not bad!');
@@ -280,7 +363,7 @@ $('.playground__guess-btn').click(function () {
                 display: 'flex',
                 color: '#EB6868'
             })
-            if (lang === 'ua'){
+            if (lang === 'ua') {
                 $('.playground__alerts').html('РмХ&...');
             } else if (lang === 'en') {
                 $('.playground__alerts').html('zXc&...');
@@ -325,7 +408,7 @@ $('.playground__guess-btn').click(function () {
         $('.card__hints').append('<li class="card__hints-item card__text card__hints-item_actualy">' + getHints($('#guessedNum').val()) + '</li>');
         let block = document.getElementById('hintsBlock');
         block.scrollTop = block.scrollHeight;
-        $('#guessedNum').val('')
+        $('.playground__guess-word').val('')
     }
 })
 
@@ -333,8 +416,10 @@ $('#goHome').click(() => {
     generatedNum = 0;
     score = 0;
     tryCount = 0;
+    getId = '';
     clearInterval(y);
     $('.pause-play__img').attr('src', './image/buttons/pause.svg');
+    $('.playground__guess-word').val('')
 
     if (lang === 'ua') {
         $('#scoreval').html('0 балів')
@@ -385,6 +470,7 @@ $('.langs').click(function () {
             $('#text_normal').html('Normal');
             $('#text_hard').html('Hard');
             $('#text_insane').html('Insane');
+            $('#play').html('Play');
 
             $('.playground__headline').html('Guess the number');
             $('#info_text').html('Information <br> panel');
@@ -410,6 +496,7 @@ $('.langs').click(function () {
             $('#text_normal').html('Нормально');
             $('#text_hard').html('Складно');
             $('#text_insane').html('Неможливо');
+            $('#play').html('Грати');
 
             $('.playground__headline').html('Відгадай число');
             $('#info_text').html('Інформаційна <br> панель');

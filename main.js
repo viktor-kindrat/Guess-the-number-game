@@ -304,6 +304,7 @@ $('.playground__guess-btn').click(function () {
         } else if (lang === 'en') {
             $('#scoreval').html(score + ' points');
         }
+        $('.card__hints').html('');
         $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');
         tryCount = 0;
         setTimeout(() => {
@@ -322,6 +323,8 @@ $('.playground__guess-btn').click(function () {
         }
         $('.card__hints-item.card__text').attr('class', 'card__hints-item card__text');
         $('.card__hints').append('<li class="card__hints-item card__text card__hints-item_actualy">' + getHints($('#guessedNum').val()) + '</li>');
+        let block = document.getElementById('hintsBlock');
+        block.scrollTop = block.scrollHeight;
         $('#guessedNum').val('')
     }
 })

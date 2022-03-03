@@ -1218,9 +1218,11 @@
         margin: 3px 0;
     }
 
-    .card.card_red {
-        height: 120px;
+    aside.card.card_red {
+        min-height: none;
+        height: 170px;
         order: -1;
+        padding: 10px
     }
 
     .card.card_yellow {
@@ -1274,14 +1276,14 @@
     }
 
     .card.card_red .card__text {
-        font-size: 14px;
-        line-height: 13px;
+        font-size: 13px;
+        line-height: 12px;
         margin: 3px 0;
     }
 
     .card.card_red .card__headline {
-        font-size: 20px;
-        line-height: 20px;
+        font-size: 18px;
+        line-height: 17px;
         padding: 0;
     }
 

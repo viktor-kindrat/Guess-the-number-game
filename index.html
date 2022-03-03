@@ -107,30 +107,46 @@
                         <span class="playground__alert">Hello world!</span>
                     </div>
                     <!-- card  -->
-                    <aside class=" card card_red ">
+                    <aside class="card card_red">
                         <div class="card__adaptive-row">
                             <h3 class="card__headline" id="info_text">Інформаційна <br> панель</h3>
                         </div>
                         <div class="card__adaptive-row">
-                            <h3 class="card__text" id="text_record">Рекорд:</h3>
+                            <h3 class="card__text" id="text_record">Рек.:</h3>
                             <p class="card__text" id="text_soon"> згодом</p>
                         </div>
                         <div class="card__adaptive-row">
-                            <h3 class="card__text" id="text_statistic">Статистика:</h3>
+                            <h3 class="card__text" id="text_statistic">Стат.:</h3>
                             <p id="scoreval" class="card__text">0 балів</p>
                         </div>
                         <div class=" card__btn-group ">
                             <button id="pause" class="card__btn card__btn_pause"><img class="pause-play__img"
                                     src="./image/buttons/pause.svg " alt=" || "></button>
-                            <button id="goHome" class="card__btn"><img src=" ./image/buttons/home.svg "
-                                    alt=" home "></button>
+                            <button id="goHome" class="card__btn card__btn_home"><img src=" ./image/buttons/home.svg "
+                                    alt="home"></button>
                         </div>
                     </aside>
+                    <div class="mobile info">
+                        <div class="card__adaptive-row" id="rec">
+                            <h3 class="card__text" id="text_record">Рек.:</h3>
+                            <p class="card__text" id="text_soon"> згодом</p>
+                        </div>
+                        <div class="card__adaptive-row">
+                            <h3 class="card__text" id="text_statistic">Стат.:</h3>
+                            <p id="scoreval" class="card__text">0 балів</p>
+                        </div>
+                    </div>
+                    <div class="mobile card__btn-group">
+                        <button id="pause" class="card__btn card__btn_pause"><img class="pause-play__img"
+                                src="./image/buttons/pause.svg " alt=" || "></button>
+                        <button id="goHome" class="card__btn card__btn_home"><img src="./image/buttons/home.svg"
+                                alt="home"></button>
+                    </div>
                 </div>
                 <div class="playground__input-column">
                     <!-- input and btn -->
                     <div class="playground__input-row">
-                        <input id="guessedNum" type="text" class="playground__guess-word">
+                        <input placeholder="Ваше число" id="guessedNum" type="text" class="playground__guess-word">
                         <button class="playground__guess-btn"><img src=" ./image/buttons/guess.svg " alt="?"></button>
                     </div>
                     <!-- phone keyboard  -->

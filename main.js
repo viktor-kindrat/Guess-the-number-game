@@ -292,6 +292,12 @@ let getHints = (checkednum) => {
             } else if (lang === 'en') {
                 return 'The number I thought is more than your'
             }
+        } else {
+            if (lang === 'ua') {
+                return 'Хммм... Ти впевнений що ти вводиш число?'
+            } else if (lang === 'en') {
+                return 'Hmmm... Are you sure that it is number?'
+            }
         }
     }
 }
@@ -401,9 +407,6 @@ $('.playground__guess-btn').click(function () {
         $('#guessedNum').val('')
     } else {
         tryCount++;
-        if (tryCount > 2) {
-            $('.card__hints').css('overflowY', 'scroll');
-        }
         $('.card__hints-item.card__text').attr('class', 'card__hints-item card__text');
         $('.card__hints').append('<li class="card__hints-item card__text card__hints-item_actualy">' + getHints($('#guessedNum').val()) + '</li>');
         let block = document.getElementById('hintsBlock');
@@ -471,14 +474,17 @@ $('.langs').click(function () {
             $('#text_hard').html('Hard');
             $('#text_insane').html('Insane');
             $('#play').html('Play');
+            $('.introduceing__h2').html('Difficulty: <span class="diff__name">easy</span>');
+            $('.introduceing__h3').html('Short description:');
 
             $('.playground__headline').html('Guess the number');
             $('#info_text').html('Information <br> panel');
-            $('#text_record').html('Record');
+            $('#text_record').html('Rec.:');
             $('#text_hints').html('Hints: ');
             $('#text_soon').html('soon');
-            $('#text_statistic').html('Score');
+            $('#text_statistic').html('Sc.:');
             $('#scoreval').html('0 points');
+            $('#guessedNum').attr('placeholder', 'your number');
         }, 600);
         lang = 'en';
     } else if (lang === 'en') {
@@ -497,14 +503,17 @@ $('.langs').click(function () {
             $('#text_hard').html('Складно');
             $('#text_insane').html('Неможливо');
             $('#play').html('Грати');
+            $('.introduceing__h2').html('Складність: <span class="diff__name">легко</span>');
+            $('.introduceing__h3').html('Короткий опис:');
 
             $('.playground__headline').html('Відгадай число');
             $('#info_text').html('Інформаційна <br> панель');
-            $('#text_reocord').html('Рекорд');
+            $('#text_reocord').html('Рек.');
             $('#text_hints').html('Підказки: ');
             $('#text_soon').html(' згодом');
-            $('#text_statistic').html('Статистика:');
+            $('#text_statistic').html('Стат.:');
             $('#scoreval').html('0 балів');
+            $('#guessedNum').attr('placeholder', 'ваше число')
         }, 600);
         lang = 'ua';
     }

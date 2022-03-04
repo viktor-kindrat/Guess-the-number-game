@@ -429,6 +429,7 @@ $('.card__btn.card__btn_home').click(() => {
     tryCount = 0;
     getId = '';
     clearInterval(y);
+    clearInterval(x);
     $('.pause-play__img').attr('src', './image/buttons/pause.svg');
     $('.playground__guess-word').val('')
 

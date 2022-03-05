@@ -752,7 +752,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: #fc7e7e;
+    color: #F15C5C;
     text-shadow: 0 0 1px #bb4646;
 }
 
@@ -841,7 +841,7 @@
     height: 50px;
     border-radius: 5px;
     cursor: pointer;
-    background: #FFB423;
+    background: #F9CB38;
     border: none;
     color: #ffffff;
     font-size: 20px;
@@ -924,6 +924,119 @@
     display: flex;
     text-align: center;
     align-self: center;
+}
+
+@keyframes customShow {
+    0% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes customHide {
+    0% {
+        opacity: 1;
+    } 
+    100% {
+        opacity: 0;
+    }
+}
+
+/* gameover  */
+.gameover {
+    min-height: 70%;
+    min-width: 80%;
+    position: fixed;
+    background: #C0E86F;
+    box-shadow: 0px 30px 20px -20px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 40px 20px;
+    display: none;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.gameover__headline {
+    width: 100%;
+    font-size: calc(20px + 1.5vw);
+    line-height: calc(21px + 1.5vw);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.gameover__adaptive-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gameover__list {
+    width: 50%;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    list-style: none;
+}
+
+.gameover__list-item {
+    font-size: calc(10px + 1vw);
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.gameover__starplace {
+    width: 50%;
+    display: flex;
+}
+
+.gameover__btn-wrap {
+    display: flex;
+}
+
+.gameover__btn {
+    min-height: 60px;
+    width: 200px;
+    background: #F9CB38;
+    box-shadow: 0px 20px 20px -10px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 100%;
+    margin: 0 20px 0 0;
+    transition: 0.2s;
+    -webkit-transition: 0.2s;
+    -moz-transition: 0.2s;
+    -ms-transition: 0.2s;
+    -o-transition: 0.2s;
+}
+
+.gameover__btn:hover {
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    box-shadow: 0 0 15px 1px #ffa332;
+}
+
+.star {
+    width: 150px;
+    height: 150px;
+    background: transparent url('./image/stars/starEmpty.svg') center center no-repeat no-repeat;
+    background-size: contain;
+    margin: 10px;
 }
 
 @media screen and (max-width: 970px) {
@@ -1469,6 +1582,70 @@
         background: #b872ff url('image/icons/time.svg') no-repeat 15px center;
         background-size: 30px;
     }
+
+    /* gameover  */
+    .gameover {
+        min-height: 70%;
+        min-width: none;
+        width: 90%;
+        border-radius: 5px;
+        padding: 20px 10px;
+        gap: 10px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -ms-border-radius: 5px;
+        -o-border-radius: 5px;
+    }
+
+    .gameover__adaptive-wrap {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .gameover__list {
+        width: 90%;
+        display: flex;
+        gap: 20px;
+    }
+
+    .gameover__list-item {
+        align-items: center;
+    }
+
+    .gameover__starplace {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gameover__btn-wrap {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        flex-wrap: wrap;
+    }
+
+    .gameover__btn {
+        min-height: 60px;
+        width: 40%;
+        padding: 10px;
+        margin: 0 10px 10px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .star {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+    }
+
 }
 
 @media screen and (max-height: 503px) and (orientation: landscape) {

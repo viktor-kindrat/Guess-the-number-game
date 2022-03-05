@@ -136,7 +136,7 @@
                         </div>
                         <div class="card__adaptive-row">
                             <h3 class="card__text" id="text_statistic">Стат.:</h3>
-                            <p id="scoreval" class="card__text scoreval">0 балів</p>
+                            <p id="scoreval" class="card__text scoreval">0</p>
                         </div>
                     </div>
                     <div class="mobile card__btn-group">
@@ -169,6 +169,27 @@
                 </div>
             </section>
         </div>
+        <section class="gameover">
+            <div class="gameover__wrap">
+                <h2 class="gameover__headline">Гру завершено</h2>
+                <div class="gameover__adaptive-wrap">
+                    <ul class="gameover__list">
+                        <li class="gameover__list-item">Статистика: <span id="finalS">00 балів </span> </li>
+                        <li class="gameover__list-item">Чисел вгадано: <span id="calcNums">00</span></li>
+                        <li class="gameover__list-item">Минулий рекорд: скоро</li>
+                    </ul>
+                    <div class="gameover__starplace">
+                        <div class="star"></div>
+                        <div class="star"></div>
+                        <div class="star"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gameover__btn-wrap">
+                <button class="gameover__btn" id="gm_home">Додому</button>
+                <button class="gameover__btn" id="gm_playAgain">Грати знову</button>
+            </div>
+        </section>
         <span class="pause-text">Pause</span>
     </main>
     <script src=" main.js "></script>

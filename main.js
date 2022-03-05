@@ -33,6 +33,7 @@ let x;
 let generatedNum = 0;
 let score = 0;
 let tryCount = 0;
+let numCalc = 0;
 let lang = 'ua';
 
 $("#menu__play-btn").click(function () {
@@ -84,8 +85,21 @@ let setTimer = (time) => {
     x = setInterval(() => {
         sec--;
         if (min === 0 && sec === 0) {
-            alert("Time Over");
-            clearInterval(x)
+            min = 0;
+            sec = 0;
+            $('.playground').css('filter', 'grayscale(0.3)')
+            $('.playground__timer').text('00:00');
+            $('.gameover').css({
+                'display': 'flex',
+                'animation': 'customShow 0.3s 1 linear'
+            });
+            if (lang === 'ua') {
+                $('#finalS').html(score + ' балів');
+            } else if (lang === 'en') {
+                $('#finalS').html(score + ' points');
+            }
+            $('#calcNums').html(numCalc);
+            clearInterval(x);
         } else if (sec <= 0) {
             sec = 60;
             min--
@@ -127,8 +141,21 @@ let setTimer = (time) => {
             x = setInterval(() => {
                 sec--;
                 if (min === 0 && sec === 0) {
-                    alert("Time Over");
-                    clearInterval(x)
+                    min = 0;
+                    sec = 0;
+                    $('.playground').css('filter', 'grayscale(0.3)')
+                    $('.playground__timer').text('00:00');
+                    $('.gameover').css({
+                        'display': 'flex',
+                        'animation': 'customShow 0.3s 1 linear'
+                    });
+                    if (lang === 'ua') {
+                        $('#finalS').html(score + ' балів');
+                    } else if (lang === 'en') {
+                        $('#finalS').html(score + ' points');
+                    }
+                    $('#calcNums').html(numCalc);
+                    clearInterval(x);
                 } else if (sec <= 0) {
                     sec = 60;
                     min--
@@ -364,6 +391,7 @@ let showAndClearPoints = () => {
 $('.playground').keypress(function (e) {
     if (e.keyCode === 13) {
         if (checkIfWin(generatedNum)) {
+            numCalc++;
             showAndClearPoints();
             score += 100 - tryCount * 2;
             if (tryCount === 0) {
@@ -440,9 +468,9 @@ $('.playground').keypress(function (e) {
                 disableAnim();
             }
             if (lang === 'ua') {
-                $('.scoreval').html(score + ' балів');
+                $('.scoreval').html(score);
             } else if (lang === 'en') {
-                $('.scoreval').html(score + ' points');
+                $('.scoreval').html(score);
             }
             $('.card__hints').html('');
             $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');
@@ -469,6 +497,7 @@ $('.playground').keypress(function (e) {
 
 $('.playground__guess-btn').click(function () {
     if (checkIfWin(generatedNum)) {
+        numCalc++;
         showAndClearPoints();
         score += 100 - tryCount * 2;
         if (tryCount === 0) {
@@ -545,9 +574,9 @@ $('.playground__guess-btn').click(function () {
             disableAnim();
         }
         if (lang === 'ua') {
-            $('.scoreval').html(score + ' балів');
+            $('.scoreval').html(score);
         } else if (lang === 'en') {
-            $('.scoreval').html(score + ' points');
+            $('.scoreval').html(score);
         }
         $('.card__hints').html('');
         $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');
@@ -578,6 +607,7 @@ $('.card__btn.card__btn_home').click(() => {
     getId = '';
     min = 0;
     sec = 0;
+    numCalc = 0;
     clearInterval(y);
     clearInterval(x);
     $('.pause-play__img').attr('src', './image/buttons/pause.svg');
@@ -588,10 +618,10 @@ $('.card__btn.card__btn_home').click(() => {
     $('.pause-text').hide(300);
 
     if (lang === 'ua') {
-        $('.scoreval').html('0 балів')
+        $('.scoreval').html('0')
         $('#hints').html('<h3 class="card__headline">Підказки:</h3><ul class="card__hints"></ul>');
     } else if (lang === 'en') {
-        $('.scoreval').html('0 points')
+        $('.scoreval').html('0')
         $('#hints').html('<h3 class="card__headline">Hints:</h3><ul class="card__hints"></ul>');
     }
     $('#playground__timer').html('00:00');
@@ -622,6 +652,87 @@ $('.numbers').click(function () {
     }
 })
 
+$('#gm_home').click(function () {
+    generatedNum = 0;
+    score = 0;
+    tryCount = 0;
+    getId = '';
+    min = 0;
+    sec = 0;
+    numCalc = 0;
+    clearInterval(y);
+    clearInterval(x);
+    $('.pause-play__img').attr('src', './image/buttons/pause.svg');
+    $('.playground__guess-word').val('')
+    $('.wrap').css({
+        'filter': 'grayscale(0) brightness(1)'
+    })
+    $('.pause-text').hide(300);
+    $('.gameover').css({
+        'animation': 'customHide 0.3s 1 linear'
+    })
+    setTimeout(() => {
+        $('.gameover').css({
+            'animation': 'none',
+            'display': 'none'
+        })
+    }, 295);
+
+    if (lang === 'ua') {
+        $('.scoreval').html('0')
+        $('#hints').html('<h3 class="card__headline">Підказки:</h3><ul class="card__hints"></ul>');
+    } else if (lang === 'en') {
+        $('.scoreval').html('0')
+        $('#hints').html('<h3 class="card__headline">Hints:</h3><ul class="card__hints"></ul>');
+    }
+    $('#playground__timer').html('00:00');
+
+    clearInterval(x);
+    $('#wrap').css({
+        background: 'url("./image/background.png") #E7FBBE center center',
+        backgroundSize: 'cover'
+    })
+    $('.playground').fadeOut(500);
+    setTimeout(() => {
+        $('.main-menu').fadeIn(500);
+    }, 500);
+
+    $('#select-difficulty').css('animation', 'none')
+    $('#select-difficulty').css({
+        'transition': '0.3s',
+        'display': 'none'
+    })
+    $('.select-difficulty__close-btn').css('display', 'none');
+})
+
+$('#gm_playAgain').click(function () {
+    $('.pause-play__img').attr('src', './image/buttons/pause.svg');
+    $('.playground__guess-word').val('')
+    $('.wrap').css({
+        'filter': 'grayscale(0) brightness(1)'
+    })
+    $('.playground').css({
+        'filter': 'grayscale(0) brightness(1)'
+    })
+    $('.pause-text').hide(300);
+    score = 0;
+    tryCount = 0;
+    min = 0;
+    sec = 0;
+    numCalc = 0;
+    $('.gameover').css({
+        'animation': 'customHide 0.3s 1 linear'
+    })
+    setTimeout(() => {
+        $('.gameover').css({
+            'animation': 'none',
+            'display': 'none'
+        })
+    }, 295);
+    generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+    stratGame(gamemodes[gmodeindex].bgColor, gamemodes[gmodeindex].hints, gamemodes[gmodeindex].time);
+})
+
 $('.langs').click(function () {
     if (lang === 'ua') {
         $('.menu__switcher').css('animation', 'langSwitch 1 0.6s cubic-bezier(.92,0,.69,.99)');
@@ -648,7 +759,7 @@ $('.langs').click(function () {
             $('#text_hints').html('Hints: ');
             $('#text_soon').html('soon');
             $('#text_statistic').html('Sc.:');
-            $('.scoreval').html('0 points');
+            $('.scoreval').html('0');
             $('#guessedNum').attr('placeholder', 'your number');
         }, 600);
         lang = 'en';

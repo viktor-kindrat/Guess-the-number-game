@@ -76,10 +76,11 @@ let generateTheNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
 let y;
+let min;
+let sec;
 let setTimer = (time) => {
-    let min = 0;
-    min = time
-    let sec = 0;
+    min = time;
+    sec = 0
     x = setInterval(() => {
         sec--;
         if (min === 0 && sec === 0) {
@@ -575,10 +576,16 @@ $('.card__btn.card__btn_home').click(() => {
     score = 0;
     tryCount = 0;
     getId = '';
+    min = 0;
+    sec = 0;
     clearInterval(y);
     clearInterval(x);
     $('.pause-play__img').attr('src', './image/buttons/pause.svg');
     $('.playground__guess-word').val('')
+    $('.wrap').css({
+        'filter': 'grayscale(0) brightness(1)'
+    })
+    $('.pause-text').hide(300);
 
     if (lang === 'ua') {
         $('.scoreval').html('0 балів')

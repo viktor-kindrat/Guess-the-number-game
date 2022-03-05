@@ -320,9 +320,50 @@ function disableAnim() {
     }, 1500);
 }
 
+let showAndClearPoints = () => {
+    let value = 100 - tryCount * 2;
+
+    function hide() {
+        setTimeout(() => {
+            $('.playground__points').css({
+                animation: 'none',
+                display: 'none',
+                color: '#ffffff'
+            })
+            $('.playground__points').html('+ default')
+        }, 1000);
+    }
+    if (value > 0) {
+        $('.playground__points').html('+' + value);
+        $('.playground__points').css({
+            animation: 'up 1s 1 linear',
+            display: 'flex',
+            color: '#929D7B'
+        });
+        hide();
+    } else if (value < 0) {
+        $('.playground__points').html('-' + value);
+        $('.playground__points').css({
+            animation: 'up 1s 1 linear',
+            display: 'flex',
+            color: '#F61E1E'
+        });
+        hide();
+    } else if (value === 0) {
+        $('.playground__points').html(value);
+        $('.playground__points').css({
+            animation: 'up 1s 1 linear',
+            display: 'flex',
+            color: '#FFFFFF'
+        });
+        hide();
+    }
+}
+
 $('.playground').keypress(function (e) {
     if (e.keyCode === 13) {
         if (checkIfWin(generatedNum)) {
+            showAndClearPoints();
             score += 100 - tryCount * 2;
             if (tryCount === 0) {
                 $('.playground__alerts').css({
@@ -427,6 +468,7 @@ $('.playground').keypress(function (e) {
 
 $('.playground__guess-btn').click(function () {
     if (checkIfWin(generatedNum)) {
+        showAndClearPoints();
         score += 100 - tryCount * 2;
         if (tryCount === 0) {
             $('.playground__alerts').css({

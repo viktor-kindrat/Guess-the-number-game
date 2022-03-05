@@ -320,6 +320,111 @@ function disableAnim() {
     }, 1500);
 }
 
+$('.playground').keypress(function (e) {
+    if (e.keyCode === 13) {
+        if (checkIfWin(generatedNum)) {
+            score += 100 - tryCount * 2;
+            if (tryCount === 0) {
+                $('.playground__alerts').css({
+                    animation: 'up 1s 1 linear',
+                    display: 'flex',
+                    color: '#929D7B'
+                })
+                if (lang === 'ua') {
+                    $('.playground__alerts').html('Не використовуй чіти)');
+                } else if (lang === 'en') {
+                    $('.playground__alerts').html("Don't use cheats)");
+                }
+                disableAnim();
+            } else if (tryCount >= 1 && tryCount <= 5) {
+                $('.playground__alerts').css({
+                    animation: 'up 1.1s 1 linear',
+                    display: 'flex',
+                    color: '#A4C958'
+                })
+                if (lang === 'ua') {
+                    $('.playground__alerts').html('Чудово!');
+                } else if (lang === 'en') {
+                    $('.playground__alerts').html('Great!');
+                }
+                disableAnim();
+            } else if (tryCount >= 6 && tryCount <= 15) {
+                $('.playground__alerts').css({
+                    animation: 'up 1.2s 1 linear',
+                    display: 'flex',
+                    color: '#EBE368'
+                });
+                if (lang === 'ua') {
+                    $('.playground__alerts').html('Добре!');
+                } else if (lang === 'en') {
+                    $('.playground__alerts').html('Good!');
+                }
+                disableAnim();
+            } else if (tryCount >= 16 && tryCount <= 25) {
+                $('.playground__alerts').css({
+                    animation: 'up 0.9s 1 linear',
+                    display: 'flex',
+                    color: '#EBAF68'
+                });
+                if (lang === 'ua') {
+                    $('.playground__alerts').html('хм... Не погано!');
+                } else if (lang === 'en') {
+                    $('.playground__alerts').html('hmm... Not bad!');
+                }
+                disableAnim();
+            } else if (tryCount >= 26 && tryCount <= 50) {
+                $('.playground__alerts').css({
+                    animation: 'up 0.8s 1 linear',
+                    display: 'flex',
+                    color: '#EB6868'
+                })
+                if (lang === 'ua') {
+                    $('.playground__alerts').html('РмХ&...');
+                } else if (lang === 'en') {
+                    $('.playground__alerts').html('zXc&...');
+                }
+                disableAnim();
+            } else if (tryCount >= 51) {
+                $('.playground__alerts').css({
+                    animation: 'up 1.3s 1 linear',
+                    display: 'flex',
+                    color: '#F61E1E'
+                })
+                if (lang === 'ua') {
+                    $('.playground__alerts').html('Ти у мінусі!');
+                } else if (lang === 'en') {
+                    $('.playground__alerts').html('You are in minus!');
+                }
+                disableAnim();
+            }
+            if (lang === 'ua') {
+                $('.scoreval').html(score + ' балів');
+            } else if (lang === 'en') {
+                $('.scoreval').html(score + ' points');
+            }
+            $('.card__hints').html('');
+            $('.card.card_gray').html('<h3 class="win-num">' + generatedNum + '</h3>');
+            tryCount = 0;
+            setTimeout(() => {
+                $('.card.card_gray').css('animation', 'drag 0.3s 3 linear');
+                $('.card.card_gray').html('<img src=" ./image/question.svg " alt=" ? " class=" card__question-img ">');
+                generatedNum = generateTheNumber(gamemodes[gmodeindex].min, gamemodes[gmodeindex].max);
+                setTimeout(() => {
+                    $('.card.card_gray').css('animation', 'none');
+                }, 1000);
+            }, 2000);
+            $('#guessedNum').val('')
+        } else {
+            tryCount++;
+            $('.card__hints-item.card__text').attr('class', 'card__hints-item card__text');
+            $('.card__hints').append('<li class="card__hints-item card__text card__hints-item_actualy">' + getHints($('#guessedNum').val()) + '</li>');
+            let block = document.getElementById('hintsBlock');
+            block.scrollTop = block.scrollHeight;
+            $('.playground__guess-word').val('')
+        }
+    }
+});
+
 $('.playground__guess-btn').click(function () {
     if (checkIfWin(generatedNum)) {
         score += 100 - tryCount * 2;

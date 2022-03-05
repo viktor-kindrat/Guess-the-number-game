@@ -76,6 +76,28 @@ let searchNeadedGM = (neededGM) => {
 let generateTheNumber = (min, max) => {
     return Math.floor(Math.random() * (max - min) + min);
 }
+
+let starsSet = () => {
+    if (score % 100 === 0 || score >= 1000) {
+        $('.star.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star.star2').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star.star3').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+    } else if (score >= 700) {
+        $('.star.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star.star2').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+    } else if (score >= 300) {
+        $('.star.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star.star2').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+    } else {
+        $('.star.star1').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star.star2').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+    }
+    $('.star').fadeOut(300);
+}
+
 let y;
 let min;
 let sec;
@@ -93,6 +115,7 @@ let setTimer = (time) => {
                 'display': 'flex',
                 'animation': 'customShow 0.3s 1 linear'
             });
+            starsSet();
             if (lang === 'ua') {
                 $('#finalS').html(score + ' балів');
             } else if (lang === 'en') {
@@ -149,6 +172,7 @@ let setTimer = (time) => {
                         'display': 'flex',
                         'animation': 'customShow 0.3s 1 linear'
                     });
+                    starsSet();
                     if (lang === 'ua') {
                         $('#finalS').html(score + ' балів');
                     } else if (lang === 'en') {

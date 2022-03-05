@@ -572,6 +572,7 @@
     background: #b98a8a52;
     backdrop-filter: blur(15px);
     display: none;
+    top: 0;
 }
 
 .mobile {
@@ -1037,6 +1038,7 @@
     background: transparent url('./image/stars/starEmpty.svg') center center no-repeat no-repeat;
     background-size: contain;
     margin: 10px;
+    display: none;
 }
 
 @media screen and (max-width: 970px) {
@@ -1454,6 +1456,10 @@
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
         border-bottom-right-radius: 0;
+    }
+
+    .pause-text {
+        top: inherit;
     }
 
     .mobile .card__btn_home {

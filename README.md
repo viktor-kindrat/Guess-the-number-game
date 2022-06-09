@@ -1,5 +1,5 @@
 # Guess the number game
-Progect-game built with JQuery 🕹
+Project-game built with JQuery 🕹
 ---
 
 JS project game. The goal in this game is to guess as many numbers as possible by the program for a certain time. Depending on the difficulty mode, the amount of time varies. Tips are available depending on the difficulty mode. 🎮

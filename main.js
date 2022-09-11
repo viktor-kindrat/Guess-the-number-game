@@ -78,22 +78,26 @@ let generateTheNumber = (min, max) => {
 }
 
 let starsSet = () => {
-    if (score % 100 === 0 || score >= 1000) {
-        $('.star.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
-        $('.star.star2').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
-        $('.star.star3').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+    if (score >= 1000) {
+        $('.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star2').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star3').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star').css('backgroudSize', 'contain')
     } else if (score >= 700) {
-        $('.star.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
-        $('.star.star2').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
-        $('.star.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star2').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star').css('backgroudSize', 'contain')
     } else if (score >= 300) {
-        $('.star.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
-        $('.star.star2').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
-        $('.star.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star1').css('background', 'transparent url("./image/stars/starFilled.svg") no-repeat no-repeat center center');
+        $('.star2').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star').css('backgroudSize', 'contain')
     } else {
-        $('.star.star1').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
-        $('.star.star2').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
-        $('.star.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star1').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star2').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
+        $('.star').css('backgroudSize', 'contain')
     }
     $('.star').fadeOut(300);
 }

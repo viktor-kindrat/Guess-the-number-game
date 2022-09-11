@@ -954,7 +954,7 @@
     box-shadow: 0px 30px 20px -20px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     padding: 40px 20px;
-    display: none;
+    display: flex;
     justify-content: space-between;
     flex-direction: column;
     gap: 20px;
@@ -1032,13 +1032,17 @@
     box-shadow: 0 0 15px 1px #ffa332;
 }
 
+.gameover__starplace {
+    height: 150px;
+}
+
 .star {
     width: 150px;
     height: 150px;
-    background: transparent url('./image/stars/starEmpty.svg') center center no-repeat no-repeat;
+    background: url('./image/stars/starEmpty.svg') center center no-repeat no-repeat;
     background-size: contain;
     margin: 10px;
-    display: none;
+    display: block;
 }
 
 @media screen and (max-width: 970px) {

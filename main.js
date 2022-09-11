@@ -99,7 +99,6 @@ let starsSet = () => {
         $('.star3').css('background', 'transparent url("./image/stars/starEmpty.svg") no-repeat no-repeat center center');
         $('.star').css('backgroudSize', 'contain')
     }
-    $('.star').fadeOut(300);
 }
 
 let y;

@@ -18,7 +18,7 @@ JS project game. The goal in this game is to guess as many numbers as possible b
 
 ###### Linked in: https://www.linkedin.com/in/viktor-kindrat/
 ---
-###### Github: https://github.com/victor-kindrat
+###### Github: https://github.com/viktor-kindrat
 ---
-###### Instagram: https://instagram.com/victor_kindrat?utm_medium=copy_link
+###### Instagram: https://instagram.com/viktor.kindrat.me
 ---
